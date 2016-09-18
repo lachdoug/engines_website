@@ -1,0 +1,50 @@
+<div class="jumbo">
+  <div class="section">
+    <h1>Run your own server</h1>
+    <h2>Self-host applications and serve data<br>
+        For organisations and personal use</h2>
+  </div>
+</div>
+<div class="section">
+  <p>Install Engines on a dedicated Linux machine. You can use virtual or physical hardware.</p>
+  <p><a href="/get_engines" class="big_button">Get Engines &#8594;</a></p>
+</div>
+
+<div class="strip">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <p>Use Engines to create a server that can do any
+        number of things for you. Run apps for online stores, blogs,
+        databases, media servers, file servers, game servers, and backups.
+        Store and process your data, send websites to your browser,
+        and provide a back-end for apps on your smartphone.</p>
+        <p>Running your own server gives you more control, lower costs, better
+        privacy and greater flexibility. You have certainty of ownership over your
+        software and the data it contains.</p>
+      </div>
+      <div class="col-6">
+        <p>Engines give you an interface to install and
+        manage your apps, and to configure your services. It is easy to share
+        data between apps. Backups are simple to setup and run. Engines uses
+        <a href="http://docker.com" target="engines_docker">Docker</a>
+        to deploy your apps and services inside secure Linux containers.</p>
+        <p>Engines is being developed by James Vodanovich
+        <a href="mailto:james@engines.org">james@engines.org</a>
+        and Lachlan Douglas
+        <a href="mailto:lachlan@engines.org">lachlan@engines.org</a>.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="row">
+  <p><a href="/apps" class="big_button">More apps &#8594;</a></p>
+  </div>
+  <div class="row">
+    <% @apps.each do |app| %>
+      <%= erb :_app, locals: { app: app } %>
+    <% end %>
+  </div>
+</div>

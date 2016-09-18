@@ -1,0 +1,42 @@
+<div class="col-4">
+  <a data-modal-id="app_<%= app['id'] %>_modal" class="app_modal_link open_modal_link">
+    <div class="index_app">
+      <div class="app_icon">
+        <img src="<%= app['icon_url_small'] %>" alt="">
+      </div>
+      <div class="app_text">
+        <div class="app_label">
+          <%= app['title'] %>
+        </div>
+        <div class="app_description">
+          <%= app['description'] %>
+        </div>
+      </div>
+    </div>
+  </a>
+</div>
+
+
+<div id="app_<%= app['id'] %>_modal" class="modal">
+  <div class="modal-content">
+    <span class="close">×</span>
+    <div class="app_icon">
+      <img src="<%= app['icon_url_small'] %>" alt="">
+    </div>
+    <div class="app_text">
+      <div class="app_label">
+        <h3><%= app['title'] %></h3>
+      </div>
+      <div class="app_description">
+        <%= app['description'] %>
+      </div>
+      <div class="app_links">
+        <% unless app['blueprint_url'].to_s == '' %><a href="<%= app['blueprint_url'] %>" target="<%= app['blueprint_url'] %>">Blueprint</a><% end %>
+        <% unless app['website_url'].to_s == '' %><a href="<%= app['website_url'] %>" target="<%= app['website_url'] %>">Wesbsite</a><% end %>
+      </div>
+      <div class="app_description">
+        <%= markdown app['readme'] %>
+      </div>
+    </div>
+  </div>
+</div>
