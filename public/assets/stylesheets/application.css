@@ -8,7 +8,7 @@ body { font-family: sans-serif; font-size: 16px; color: #666; margin: 0px; paddi
 .strip { border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; background-color: #fcfcfc; }
 
 .engines_logo { height: 50px; margin: 20px; }
-.prerelease_alert { border: 1px solid #d84; border-radius: 6px; background-color: #fdf8f4; padding: 10px; font-size: 0.8em; }
+.prerelease_alert { color: #d84; border-radius: 6px; background-color: #fdf8f4; padding: 10px; font-size: 0.8em; }
 pre { border: 1px solid #48d; border-radius: 6px; background-color: #f4f8fd; padding: 10px; overflow-y: scroll; overflow: auto; }
 
 a.big_button { background-color: #48d; color: #fff; text-decoration: none; padding: 10px; font-size: 1.2em; border-radius: 6px; border: 1px solid #fff; }

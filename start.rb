@@ -33,15 +33,17 @@ get '/uninstall' do
 end
 
 def apps_json
-  RestClient.get( "#{engines_library_url}/api/v0/apps.json" )
+  RestClient.get( "#{engines_library_uri}/api/v0/apps.json" )
 end
 
-def engines_library_url
+def engines_library_uri
   ENV['ENGINES_LIBRARY_API_URI'] || "http://localhost:3010"
 end
 
 def library_apps
   @@library_apps ||= JSON.parse(apps_json)
+rescue
+  []
 end
 
 def featured_apps

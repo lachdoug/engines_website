@@ -1,9 +1,10 @@
 <div class="section">
   <div class="row">
-    <p><a href="/" class="home_button">&#8962; Home</a></p>
+    <p><a href="/" class="home_button">Home</a></p>
     <h3>Apps</h3>
     <% @apps.each do |app| %>
       <%= erb :_app, locals: { app: app } %>
     <% end %>
+    <%= 'None' if @apps.empty? %>
   </div>
 </div>
