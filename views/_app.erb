@@ -35,7 +35,7 @@
         <% unless app['website_url'].to_s == '' %><a href="<%= app['website_url'] %>" target="<%= app['website_url'] %>">Wesbsite</a><% end %>
       </div>
       <div class="app_description">
-        <%= markdown app['readme'] %>
+        <%= markdown "app['readme']" %>
       </div>
     </div>
   </div>

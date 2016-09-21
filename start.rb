@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'glorify'
 require 'rest-client'
 require 'json'
 
@@ -37,7 +38,7 @@ def apps_json
 end
 
 def engines_library_uri
-  ENV['ENGINES_LIBRARY_API_URI'] || "http://localhost:3010"
+  ENV['ENGINES_LIBRARY_API_URI'] || "http://localhost:3010" # || "http://appslib.current.engines.org/"
 end
 
 def library_apps

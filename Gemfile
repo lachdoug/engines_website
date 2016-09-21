@@ -3,4 +3,8 @@ source 'https://rubygems.org'
 gem 'sinatra'
 gem 'rest-client'
 gem 'json'
-gem 'glorify' ## Markdown parser
+
+## Markdown parser
+gem 'glorify'
+
+# gem 'pandoc-ruby'
