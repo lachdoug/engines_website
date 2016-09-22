@@ -13,6 +13,7 @@ def index_html
 end
 
 get '/apps' do
+  p "Loaded library_apps #{library_apps}"
   AppsHtml ||= apps_html
 end
 
@@ -42,13 +43,24 @@ def engines_library_uri
 end
 
 def library_apps
-  @@library_apps ||= JSON.parse(apps_json)
+  @@library_apps ||= apps_from_schema(JSON.parse(apps_json))
+end
+
+def apps_from_schema(library_apps_hash)
+  return schema_0_1_apps(library_apps_hash) if library_apps_hash['schema'] == '0.1'
+  p "Missing valid :schema #{library_apps_hash}"
+  []
 rescue
+  p "Rescued apps_from_schema with [] - #{library_apps_hash}"
   []
 end
 
+def schema_0_1_apps(library_apps_hash)
+  library_apps_hash['apps'] || []
+end
+
 def featured_apps
-  library_apps.select{|app| p "app #{app}"; app['featured']}
+  library_apps.select{|app| app['featured']}
 end
 
 helpers do
