@@ -35,11 +35,16 @@ get '/uninstall' do
 end
 
 def apps_json
-  RestClient.get( "#{engines_library_uri}/api/v0/apps.json" )
+  url = "#{engines_library_uri}/api/v0/apps.json"
+  RestClient.get url
+rescue
+  # Try again with invalid ssl
+  p "Warning: The library certificate is invalid!"
+  RestClient::Request.execute( method: :get, url: url, headers: {}, verify_ssl: false )
 end
 
 def engines_library_uri
-  ENV['ENGINES_LIBRARY_API_URI'] || "http://localhost:3010" # || "http://appslib.current.engines.org/"
+  ENV['ENGINES_LIBRARY_API_URI'] || !"http://localhost:3010" || "https://appslib.current.engines.org/"
 end
 
 def library_apps
