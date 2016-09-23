@@ -4,9 +4,11 @@ require 'json'
 require 'redcarpet'
 
 get '/' do
-  IndexHtml ||= index_html
-rescue => e
-  e.to_s + ' ' + engines_library_uri.to_s
+  begin
+    IndexHtml ||= index_html
+  rescue => e
+    'Could not load apps from: ' + engines_library_uri.to_s
+  end
 end
 
 def index_html
@@ -37,12 +39,14 @@ get '/uninstall' do
 end
 
 def apps_json
-  url = "#{engines_library_uri}/api/v0/apps.json"
-  RestClient.get url
-rescue
-  # Try again with invalid ssl
-  p "Warning: The library certificate is invalid!"
-  RestClient::Request.execute( method: :get, url: url, headers: {}, verify_ssl: false )
+  begin
+    url = "#{engines_library_uri}/api/v0/apps.json"
+    RestClient.get url
+  rescue
+    # Try again with invalid ssl
+    p "Warning: The library certificate is invalid!"
+    RestClient::Request.execute( method: :get, url: url, headers: {}, verify_ssl: false )
+  end
 end
 
 def engines_library_uri
