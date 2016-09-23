@@ -7,7 +7,7 @@ get '/' do
   begin
     IndexHtml ||= index_html
   rescue => e
-    'Could not load apps from: ' + engines_library_uri.to_s
+    'Could not load apps from: ' + engines_library_uri.to_s + ' ' + e.to_s
   end
 end
 
