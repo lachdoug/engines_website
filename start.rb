@@ -5,6 +5,8 @@ require 'redcarpet'
 
 get '/' do
   IndexHtml ||= index_html
+rescue => e
+  e.to_s + ' ' + engines_library_uri.to_s
 end
 
 def index_html
@@ -41,8 +43,6 @@ rescue
   # Try again with invalid ssl
   p "Warning: The library certificate is invalid!"
   RestClient::Request.execute( method: :get, url: url, headers: {}, verify_ssl: false )
-rescue
-  '{}'
 end
 
 def engines_library_uri
