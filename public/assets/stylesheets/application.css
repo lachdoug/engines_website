@@ -29,6 +29,8 @@ a.app_modal_link { text-decoration: none; color: #666; }
 .index_app .app_text .app_description { display: block; font-size: 0.6em; word-wrap: break-word; white-space: initial; }
 .index_app .app_text .app_label { display: block; font-size: 0.8em; word-wrap: break-word; white-space: initial; }
 
-.app_links { margin: 10px 0px; }
+.app_links { margin-left: -20px; padding: 15px; }
+.app_links a { color: #666; border: 1px solid #999; border-radius: 4px; padding: 10px; margin: 5px; text-decoration: none; }
+.app_links a:hover { color: #333; }
 
 hr { background-color: #ccc; height: 1px; border: 0; }
