@@ -7,15 +7,15 @@ $(document).ready(function() {
 });
 
 // Init carousel for Developer Studio screenshots
-// $(document).ready(function() {
-// 	$('#developer_studio_screenshots_carousel').slick({
-// 		// nextArrow: '<i class="fa fa-arrow-right"></i>',
-// 		// prevArrow: '<i class="fa fa-arrow-left"></i>',
-// 		dots: true,
-//   	// variableWidth: true
-// 	// add the rest of your options here
-// 	});
-// });
+$(document).ready(function() {
+	$('.user_stories_carousel').slick({
+		nextArrow: '<i class="fa fa-arrow-right"></i>',
+		prevArrow: '<i class="fa fa-arrow-left"></i>',
+		dots: true,
+  	// variableWidth: true
+	// add the rest of your options here
+	});
+});
 
 
 // Init fullPage
@@ -24,7 +24,7 @@ $(document).ready(function() {
 		//Navigation
 		// menu: '#menu',
 		// lockAnchors: false,
-		anchors:['welcome', 'about1', 'about2', 'pricing', 'install', 'technical', 'library', 'developers', 'blueprints', 'studio', 'user_stories', 'contact'],
+		anchors:['welcome', 'about1', 'about2', 'pricing', 'library', 'install', 'user_stories', 'technical', 'contact', 'developers', 'blueprints', 'studio'],
 		navigation: true,
 		navigationPosition: 'left',
 		// navigationTooltips: ['welcome', 'install', 'about', 'library'],

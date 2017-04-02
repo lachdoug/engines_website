@@ -88,7 +88,7 @@
         <div class="col-4">
           <div class='segment_terms'>
             <h3>Community</h3>
-            <h2>Free</h2>
+            <h2>Free<br>&nbsp;</h2>
             <p> Non-commercial use<br>
                 One Engines system per account<br>
                 Management GUI runs locally</p>
@@ -97,16 +97,16 @@
         <div class="col-4">
           <div class='segment_terms'>
             <h3>Commercial</h3>
-            <h2>$1/GB/month</h2>
+            <h2>$1/GB/month<br>&nbsp;</h2>
             <p> Commercial use<br>
                 Unlimited Engines systems per account<br>
-                Management GUI runs locally or remotely</p>
+                Management GUI can run locally or remotely</p>
           </div>
         </div>
         <div class="col-4">
           <div class='segment_terms'>
             <h3>Integrator</h3>
-            <h2>$50/month + $15/month/CAL</h2>
+            <h2>$50/month +<br>$15/month/CAL</h2>
             <p> System integrators and OEMs<br>
               Remotely manage multiple systems across multiple accounts</p>
           </div>
@@ -115,7 +115,20 @@
     </div>
   </div>
 
-  <div class="section small_text" data-anchor="install">
+  <div class="section" data-anchor="library">
+    <div class="container">
+      <div class="row">
+        <p>Some of the apps that can be installed and run on Engines.</p>
+      </div>
+      <div class="row text-center">
+        <% @apps.each do |app| %>
+          <%= erb :_app, locals: { app: app } %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="section contrasting_font_color small_text" data-anchor="install">
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -144,6 +157,135 @@
     </div>
   </div>
 
+  <div class="section small_text" data-anchor="user_stories">
+    <div class="container">
+
+      <div class="user_stories_carousel">
+        <div class="user_stories_carousel_slide">
+          <p>
+            <img src='assets/images/user_stories/mimi.jpg'></img>
+            Mimi is a photographer. She has a server in the cloud for her portfolio website, client albums and back-ups. She has another in her studio for personal storage, to make it easier to work with big files.
+          </p>
+        </div>
+        <div class="user_stories_carousel_slide">
+          <p>
+            <img src='assets/images/user_stories/terrance.jpg'></img>
+            Terrance is head of sales for his firm. He uses a CRM system that he shares with his two colleagues. He uses Engines because it allows him to run the CRM system that he likes without burdening the IT department with the build.
+          </p>
+        </div>
+        <div class="user_stories_carousel_slide">
+          <p>
+            <img src='assets/images/user_stories/dan.jpg'></img>
+            Dan is an IT consultant with many small business clients. He uses Engines for building core network services, including servers for files, email, printing, calendars and contacts. Dan is able to quickly deploy cost-effective solutions that work well and make clients happy.
+          </p>
+        </div>
+        <div class="user_stories_carousel_slide">
+          <p>
+            <img src='assets/images/user_stories/sally.jpg'></img>
+            Sally is a PR professional. She runs a database in the cloud for her consulting business. The database tracks projects and tasks across Sally's team, keeps record of industry contacts, stores press clippings, and generates reports for clients.
+          </p>
+        </div>
+        <div class="user_stories_carousel_slide">
+          <p>
+            <img src='assets/images/user_stories/sam.jpg'></img>
+            Sam is a project manager. Sam fired-up a server in the office of his new employer to help the team collaborate better. The server is running Sam's favourite project management software and the others love it.
+          </p>
+        </div>
+        <div class="user_stories_carousel_slide">
+          <p>
+            <img src='assets/images/user_stories/doug.jpg'></img>
+            Doug is a management systems consultant. He uses a server to run machine learning applications that help him optimize client operations. Doug likes Engines because they make it easy for him to scale-up when he needs to handle large amounts of data.
+          </p>
+        </div>
+        <div class="user_stories_carousel_slide">
+          <p>
+            <img src='assets/images/user_stories/finn.jpg'></img>
+            Finn is a web designer with a server in the cloud for hosting the websites that he builds for his clients. He also has a server in his office for web development. He likes Engines because he can easily move complex sites between physical and virtual hosting environments.
+          </p>
+        </div>
+        <div class="user_stories_carousel_slide">
+          <p>
+            <img src='assets/images/user_stories/anika.jpg'></img>
+            Anika is an independent software developer. She writes custom applications for client businesses. Anika runs her apps in Engines to make deployment as easy as possible for her and her clients.
+          </p>
+        </div>
+        <div class="user_stories_carousel_slide">
+          <p>
+            <img src='assets/images/user_stories/tim.jpg'></img>
+            Tim is a teacher. He hosts a web forum for his students on a mini PC in his office. Students use the forum for downloading worksheets, asking questions, submitting homework, and receiving their results.
+          </p>
+        </div>
+        <div class="user_stories_carousel_slide">
+          <p>
+            <img src='assets/images/user_stories/jennyandspring.jpg'></img>
+            Spring is a prize-winning show dog. Jenny built Spring a fanpage as a class project. She runs it from Engines on her Pi.
+          </p>
+        </div>
+        <div class="user_stories_carousel_slide">
+          <p>
+            <img src='assets/images/user_stories/william.jpg'></img>
+            William set-up a sports team server for his basketball team. It helps the coach, players and parents keep organised and engaged. The photos and messages that everyone is posting will make a great keepsake of the season.
+          </p>
+        </div>
+        <div class="user_stories_carousel_slide">
+          <p>
+            <img src='assets/images/user_stories/justin.jpg'></img>
+            Justin has recut some open source to build a better server application for managing restaurants. He has published his work using Engines to make it easy to showcase his development skills to potential employers.
+          </p>
+        </div>
+        <div class="user_stories_carousel_slide">
+          <p>
+            <img src='assets/images/user_stories/rick.jpg'></img>
+            Rick runs his music library from his personal server. He hosts from his bedroom and has over twenty gigs of songs.
+          </p>
+        </div>
+        <div class="user_stories_carousel_slide">
+          <p>
+            <img src='assets/images/user_stories/elise.jpg'></img>
+            Elise reads lots of books. She uses Engines to run a library to house her ebook collection. She runs a web forum for her bookclub from the same machine.
+          </p>
+        </div>
+        <div class="user_stories_carousel_slide">
+          <p>
+            <img src='assets/images/user_stories/alberto.jpg'></img>
+            Alberto is an ace pilot...on the multi-player fighter plane game that he runs on Engines.
+          </p>
+        </div>
+        <div class="user_stories_carousel_slide">
+          <p>
+            <img src='assets/images/user_stories/susan.jpg'></img>
+            Susan is passionate about fitness. Her personal server logs her biometrics and helps Susan analyse her progress.
+          </p>
+        </div>
+        <div class="user_stories_carousel_slide">
+          <p>
+            <img src='assets/images/user_stories/marty.jpg'></img>
+            Marty has a seriously geeked-out digital home. He is running a file server, email server, calendar server, contacts server, media server and home automation server. All this on a computer with an average draw of less than 5 watts. Wow. Marty, you're a legend.
+          </p>
+        </div>
+        <div class="user_stories_carousel_slide">
+          <p>
+            <img src='assets/images/user_stories/ashi.jpg'></img>
+            Ashi and her friends like to chat online. Ashi runs a private instant messaging service so they can have a social network all to themselves.
+          </p>
+        </div>
+        <div class="user_stories_carousel_slide">
+          <p>
+            <img src='assets/images/user_stories/heather.jpg'></img>
+            Heather runs a personal family website and genealogy blog. The whole clan uses the site to privately share memories for posterity.
+          </p>
+        </div>
+        <div class="user_stories_carousel_slide">
+          <p>
+            <img src='assets/images/user_stories/charlie.jpg'></img>
+            Charlie runs a Minecraft server from home. Charlie and his friends connect from anywhere and work together to build amazing virtual worlds.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
   <div class="section contrasting_font_color" data-anchor="technical">
     <div class="container">
       <div class="row">
@@ -160,20 +302,20 @@
     </div>
   </div>
 
-  <div class="section" data-anchor="library">
+  <div class="section" data-anchor="contact">
     <div class="container">
       <div class="row">
-        <p>Some of the apps that can be installed and run on Engines.</p>
-      </div>
-      <div class="row text-center">
-        <% @apps.each do |app| %>
-          <%= erb :_app, locals: { app: app } %>
-        <% end %>
+        <div class="col-12">
+          <p>Engines is under active development by James Vodanovich
+          <a href="mailto:james@engines.org">james@engines.org</a>
+          and Lachlan Douglas
+          <a href="mailto:lachlan@engines.org">lachlan@engines.org</a>.</p>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="section contrasting_font_color" data-anchor="blueprints">
+  <div class="section contrasting_font_color" data-anchor="developers">
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -202,7 +344,7 @@
     </div>
   </div>
 
-  <div class="section contrasting_font_color" data-anchor="blueprints">
+  <div class="section contrasting_font_color" data-anchor="studio">
     <div id="logo_mechanical">
       <img src="/assets/images/logo_mechanical_drawing.png">
     </div>
@@ -224,148 +366,6 @@
         </div>
         <div class="col-3 col-6-sm">
           <a href="/assets/images/screenshots/engines_developer_studio_4.png"><img class="screenshot" src="/assets/images/screenshots/engines_developer_studio_4.png"></img></a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-  <div class="section very_small_text" data-anchor="user_stories">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <h3>At work</h3>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-3 col-6-sm">
-          <image src='assets/images/user_stories/sally.jpg'></image>
-          <p>Sally is a PR professional. She runs a database in the cloud for her consulting business. The database tracks projects and tasks across Sally's team, keeps record of industry contacts, stores press clippings, and generates reports for clients.</p>
-        </div>
-        <div class="col-3 col-6-sm">
-          <image src='assets/images/user_stories/sam.jpg'></image>
-          <p>Sam is a project manager. Sam fired-up a server in the office of his new employer to help the team collaborate better. The server is running Sam's favourite project management software and the others love it.</p>
-        </div>
-        <div class="col-3 col-6-sm">
-          <image src='assets/images/user_stories/mimi.jpg'></image>
-          <p>Mimi is a photographer. She has a server in the cloud for her portfolio website, client albums and back-ups. She has another in her studio for personal storage, to make it easier to work with big files.</p>
-        </div>
-        <div class="col-3 col-6-sm">
-          <image src='assets/images/user_stories/terrance.jpg'></image>
-          <p>Terrance is head of sales for his firm. He uses a CRM system that he shares with his two colleagues. He uses Engines because it allows him to run the CRM system that he likes without burdening the IT department with the build.</p>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-12">
-          <h3>Techical use</h3>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-3 col-6-sm">
-          <image src='assets/images/user_stories/dan.jpg'></image>
-          <p>Dan is an IT consultant with many small business clients. He uses Engines for building core network services, including servers for files, email, printing, calendars and contacts. Dan is able to quickly deploy cost-effective solutions that work well and make clients happy.</p>
-        </div>
-        <div class="col-3 col-6-sm">
-          <image src='assets/images/user_stories/doug.jpg'></image>
-          <p>Doug is a management systems consultant. He uses a server to run machine learning applications that help him optimize client operations. Doug likes Engines because they make it easy for him to scale-up when he needs to handle large amounts of data.</p>
-        </div>
-        <div class="col-3 col-6-sm">
-          <image src='assets/images/user_stories/finn.jpg'></image>
-          <p>Finn is a web designer with a server in the cloud for hosting the websites that he builds for his clients. He also has a server in his office for web development. He likes Engines because he can easily move complex sites between physical and virtual hosting environments.</p>
-        </div>
-        <div class="col-3 col-6-sm">
-          <image src='assets/images/user_stories/anika.jpg'></image>
-          <p>Anika is an independent software developer. She writes custom applications for client businesses. Anika runs her apps in Engines to make deployment as easy as possible for her and her clients.</p>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-12">
-          <h3>In school</h3>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-3 col-6-sm">
-          <image src='assets/images/user_stories/tim.jpg'></image>
-          <p>Tim is a teacher. He hosts a web forum for his students on a mini PC in his office. Students use the forum for downloading worksheets, asking questions, submitting homework, and receiving their results.</p>
-        </div>
-        <div class="col-3 col-6-sm">
-          <image src='assets/images/user_stories/jennyandspring.jpg'></image>
-          <p>Spring is a prize-winning show dog. Jenny built Spring a fanpage as a class project. She runs it from Engines on her Pi.</p>
-        </div>
-        <div class="col-3 col-6-sm">
-          <image src='assets/images/user_stories/william.jpg'></image>
-          <p>William set-up a sports team server for his basketball team. It helps the coach, players and parents keep organised and engaged. The photos and messages that everyone is posting will make a great keepsake of the season.</p>
-        </div>
-        <div class="col-3 col-6-sm">
-          <image src='assets/images/user_stories/justin.jpg'></image>
-          <p>Justin has recut some open source to build a better server application for managing restaurants. He has published his work using Engines to make it easy to showcase his development skills to potential employers.</p>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-12">
-          <h3>At home</h3>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-3 col-6-sm">
-          <image src='assets/images/user_stories/rick.jpg'></image>
-          <p>Rick runs his music library from his personal server. He hosts from his bedroom and has over twenty gigs of songs.</p>
-        </div>
-        <div class="col-3 col-6-sm">
-          <image src='assets/images/user_stories/elise.jpg'></image>
-          <p>Elise reads lots of books. She uses Engines to run a library to house her ebook collection. She runs a web forum for her bookclub from the same machine.</p>
-        </div>
-        <div class="col-3 col-6-sm">
-          <image src='assets/images/user_stories/alberto.jpg'></image>
-          <p>Alberto is an ace pilot...on the multi-player fighter plane game that he runs on Engines.</p>
-        </div>
-        <div class="col-3 col-6-sm">
-          <image src='assets/images/user_stories/susan.jpg'></image>
-          <p>Susan is passionate about fitness. Her personal server logs her biometrics and helps Susan analyse her progress.</p>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-3 col-6-sm">
-          <image src='assets/images/user_stories/marty.jpg'></image>
-          <p>Marty has a seriously geeked-out digital home. He is running a file server, email server, calendar server, contacts server, media server and home automation server. All this on a computer with an average draw of less than 5 watts. Wow. Marty, you're a legend.</p>
-        </div>
-        <div class="col-3 col-6-sm">
-          <image src='assets/images/user_stories/ashi.jpg'></image>
-          <p>Ashi and her friends like to chat online. Ashi runs a private instant messaging service so they can have a social network all to themselves.</p>
-        </div>
-        <div class="col-3 col-6-sm">
-          <image src='assets/images/user_stories/heather.jpg'></image>
-          <p>Heather runs a personal family website and genealogy blog. The whole clan uses the site to privately share memories for posterity.</p>
-        </div>
-        <div class="col-3 col-6-sm">
-          <image src='assets/images/user_stories/charlie.jpg'></image>
-          <p>Charlie runs a Minecraft server from home. Charlie and his friends connect from anywhere and work together to build amazing virtual worlds.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-
-
-
-  <div class="section contrasting_font_color" data-anchor="contact">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <p>Engines is under active development by James Vodanovich
-          <a href="mailto:james@engines.org">james@engines.org</a>
-          and Lachlan Douglas
-          <a href="mailto:lachlan@engines.org">lachlan@engines.org</a>.</p>
         </div>
       </div>
     </div>
