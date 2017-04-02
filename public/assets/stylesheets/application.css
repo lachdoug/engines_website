@@ -1,4 +1,93 @@
-body { font-family: sans-serif; font-size: 16px; color: #666; margin: 0px; padding-bottom: 100px; }
+/*FONTS*/
+@font-face {
+  font-family: "SourceSansPro";
+  src: url(/assets/fonts/source_sans_pro/SourceSansPro-ExtraLight.ttf) format("truetype");
+}
+html {
+  font-family: "SourceSansPro", Verdana, Tahoma;
+  color: #666;
+  font-size: 32px;
+}
+@media only screen and (max-width: 70em) {
+  html {
+    font-size: 24px;
+  }
+}
+
+/*ICONS*/
+.big_icon { font-size: 48px;}
+
+/*LOGO*/
+.engines_logo { height: 125px; margin-left: -10px; }
+@media only screen and (max-width: 70em) {
+  .engines_logo { height: 75px; margin-left: -10px; }
+}
+
+/*LAYOUT*/
+.text-center { text-align: center; }
+.small_text { font-size: 0.75em; }
+.very_small_text { font-size: 0.5em; }
+
+/*IPHONE IMAGES*/
+.iphone_wrapper {
+  text-align: center;
+}
+.iphone {
+  width: 100%;
+  max-width: 600px;
+ }
+
+/*SCREENSHOTS*/
+.screenshot { width: 100%; }
+.app_menu_screenshot { text-align: center; }
+.app_menu_screenshot img { width: 66%; }
+
+/*CAROUSELS*/
+/*.slick_carousel_wrapper { display: inline-block; }*/
+/*.slick-arrow_wrapper { display: inline-block; color: #666; }*/
+/*.slick-list { display: inline-block; }*/
+/*.carousel_slide img { width: 200px; }*/
+/*.slick-dots li button:before {
+    font-size: 32px;
+    line-height: 32px;
+}*/
+
+/*LOGO MECHANICAL DRAWING*/
+#logo_mechanical { opacity: 0.1; position: absolute; padding-left: 15%; }
+
+
+/*BLOB*/
+#wobbly_blob { opacity: 0.05; overflow-y: none; position: absolute; padding-left: 50%; margin-top: -200px; }
+#wobbly_blob svg { min-width: 500px; }
+#wobbly_blob path { fill: #48d; }
+@media only screen and (min-width: 45em) {
+  #wobbly_blob { height: 100%; }
+}
+
+/*FULLPAGE*/
+#fullpage .section .container { padding: 20px; }
+#fullpage .contrasting_font_color { color: #fff; }
+
+#fp-nav ul li a span {
+  background: #666;
+}
+@media only screen and (max-width: 45em) {
+  #fp-nav.left {
+    left: 0px;
+  }
+}
+
+/*BUTTONS*/
+a.button { text-decoration: none; padding: 10px; font-size: 0.8em; border-radius: 6px; border: 1px solid #666; color: #666; }
+
+/*PRE*/
+pre { white-space: pre-line; }
+
+/*PRICING*/
+.segment_terms { font-size: 0.6em; padding: 10px; text-align: center; }
+
+
+/*body { font-family: sans-serif; font-size: 16px; color: #666; margin: 0px; padding-bottom: 100px; }
 .section { padding: 20px; max-width: 60rem; margin: 0 auto; }
 
 .jumbo { background: linear-gradient(0deg, #48d, #6af); color: #fff; }
@@ -7,7 +96,7 @@ body { font-family: sans-serif; font-size: 16px; color: #666; margin: 0px; paddi
 
 .strip { border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; background-color: #fcfcfc; }
 
-.engines_logo { height: 50px; margin: 20px; }
+.engines_logo { height: 50px; padding: 20px; }
 .prerelease_alert { color: #d84; border-radius: 6px; background-color: #fdf8f4; padding: 10px; font-size: 0.8em; }
 pre { border: 1px solid #48d; border-radius: 6px; background-color: #f4f8fd; padding: 10px; overflow-y: scroll; overflow: auto; }
 
@@ -15,7 +104,7 @@ a.big_button { background-color: #48d; color: #fff; text-decoration: none; paddi
 a.big_button:hover { background-color: #3478cd; }
 a.big_button:active { box-shadow: inset 0 3px 5px rgba(0,0,0,0.125); }
 
-a.home_button { text-decoration: none; background-color: #48d; border-radius: 6px; color: #fff; padding: 10px; }
+a.home_button { text-decoration: none; background-color: #48d; border-radius: 6px; color: #fff; padding: 10px; float: right;}
 a.home_button:hover { background-color: #3478cd; cursor: pointer; }
 a.home_button:active { box-shadow: inset 0 3px 5px rgba(0,0,0,0.125); }
 
@@ -24,7 +113,8 @@ a.app_modal_link { text-decoration: none; color: #666; }
 .index_app:hover { background-color: #fafafa; cursor: pointer; }
 .index_app:active { box-shadow: inset 0 3px 5px rgba(0,0,0,0.125); }
 .index_app .app_icon img { max-height: 64px; max-width: 64px; }
-.index_app .app_icon { display: inline-block; width: 64px; height: 64px; text-align: center; }
+.index_app .app_icon { display: inline-block; width: 64px; height: 64px; }
+.index_app .app_icon img { width: 64px; height: 64px; }
 .index_app .app_text { display: inline-block; vertical-align: top; padding 5px; width: 75%; max-height: 68px; overflow: hidden; }
 .index_app .app_text .app_description { display: block; font-size: 0.6em; word-wrap: break-word; white-space: initial; }
 .index_app .app_text .app_label { display: block; font-size: 0.8em; word-wrap: break-word; white-space: initial; }
@@ -34,3 +124,9 @@ a.app_modal_link { text-decoration: none; color: #666; }
 .app_links a:hover { color: #333; }
 
 hr { background-color: #ccc; height: 1px; border: 0; }
+
+.screenshot { width: 100%; }
+
+@media screen and (min-width: 480px) {
+  .screenshot { width: 49%; display: inline-block; }
+}*/

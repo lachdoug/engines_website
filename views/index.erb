@@ -1,50 +1,374 @@
-<div class="jumbo">
-  <div class="section">
-    <h1>Run your own server</h1>
-    <h2>Self-host applications and serve data<br>
-        For organisations and personal use</h2>
-  </div>
-</div>
-<div class="section">
-  <p>Install Engines on a dedicated Linux machine. You can use virtual or physical hardware.</p>
-  <p><a href="/get_engines" class="big_button">Get Engines</a></p>
-</div>
+<div id="fullpage">
 
-<div class="strip">
-  <div class="container">
-    <div class="row">
-      <div class="col-6">
-        <p>Use Engines to create a server that can do any
-        number of things for you. Run apps for online stores, blogs,
-        databases, media servers, file servers, game servers, and backups.
-        Store and process your data, send websites to your browser,
-        and provide a back-end for apps on your smartphone.</p>
-        <p>Running your own server gives you more control, lower costs, better
-        privacy and greater flexibility. You have certainty of ownership over your
-        software and the data it contains.</p>
-      </div>
-      <div class="col-6">
-        <p>Engines give you an interface to install and
-        manage your apps, and to configure your services. It is easy to share
-        data between apps. Backups are simple to setup and run. Engines uses
-        <a href="http://docker.com" target="engines_docker">Docker</a>
-        to deploy your apps and services inside secure Linux containers.</p>
-        <p>Engines is being developed by James Vodanovich
-        <a href="mailto:james@engines.org">james@engines.org</a>
-        and Lachlan Douglas
-        <a href="mailto:lachlan@engines.org">lachlan@engines.org</a>.</p>
+  <div class="section" data-anchor="welcome">
+    <div id="wobbly_blob">
+      <svg viewBox="0 0 847 1318">
+        <path>
+          <animate attributeName="d" dur="15000ms" repeatCount="indefinite"
+            values="M837.5 459.3c-43.9 235.5-225.7 270.5-186 441.9 72.7 313.8-150.4 445.6-312.9 410.9-162.5-34.8-304.5-261.5-222.2-455.5s-40.1-256.3-78-352.3S-52 246 119.4 89.5s461.2-68 546.6-29.2c85.4 38.7 215.4 163.5 171.5 399z;
+                    M774.3 342.8c-43.9 235.5-262.7 382.6-223 554 72.7 313.8-152.5 435.7-315 401-162.5-34.8-293.3-226-211-420s81.9-259 44-355-146.4-245.5 25-402 439.6-129.8 525-91c85.4 38.7 198.9 77.5 155 313z;
+                    M837.5 459.3c-43.9 235.5-225.7 270.5-186 441.9 72.7 313.8-150.4 445.6-312.9 410.9-162.5-34.8-304.5-261.5-222.2-455.5s-40.1-256.3-78-352.3S-52 246 119.4 89.5s461.2-68 546.6-29.2c85.4 38.7 215.4 163.5 171.5 399z;">
+          </animate>
+        </path>
+      </svg>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <a href="/"><img src="/assets/images/logo_transparent.png" class="engines_logo"></a>
+          <h4>Self-host your software</h4>
+          <p><a href="#install" class="button"><i class="fa fa-download"></i> Get Engines</a></p>
+        </div>
+        <div class="col-6">
+          <div id="phone1" class="iphone_wrapper">
+            <img src="/assets/images/iphone1.png" class="iphone">
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<div class="section">
-  <div class="row">
-  <p><a href="/apps" class="big_button">Apps</a></p>
+  <div class="section contrasting_font_color" data-anchor="about1">
+    <div class="container">
+      <div class="row">
+        <div class="col-4 col-6-sm text-center">
+          <p><div class="big_icon"><i class="fa fa-hdd-o"></i></div>Run your<br>own server</p>
+        </div>
+        <div class="col-4 col-6-sm text-center">
+          <p><div class="big_icon"><i class="fa fa-cloud"></i></div>Virtual or<br>physical hardware</p>
+        </div>
+        <div class="col-4 col-6-sm text-center">
+          <p><div class="big_icon"><i class="fa fa-database"></i></div>Self-host apps<br>and data</p>
+        </div>
+        <div class="col-4 col-6-sm text-center">
+          <p><div class="big_icon"><i class="fa fa-linux"></i></div>Use a dedicated<br>Linux machine</p>
+        </div>
+        <div class="col-4 col-6-sm text-center">
+          <p><div class="big_icon"><i class="fa fa-play"></i></div>Manage your system<br>with a GUI</p>
+        </div>
+        <div class="col-4 col-6-sm text-center">
+          <p><div class="big_icon"><i class="fa fa-users"></i></div>For organisations<br>and individuals</p>
+        </div>
+        <div class="col-12 text-center">
+          <p>Self-hosting gives you more control, lower costs, better
+          privacy and greater flexibility. You have certainty of ownership over your
+          server and the data it contains.</p>
+          <p>You can self-host apps for online stores, blogs,
+          databases, media servers, file servers, game servers, backups,
+           and more...</p>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="row">
-    <% @apps.each do |app| %>
-      <%= erb :_app, locals: { app: app } %>
-    <% end %>
+
+  <div class="section" data-anchor="about2">
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <p>Engines is a server management platform that lets end-users
+          easily self-host web apps and Internet services.</p>
+          <p>The GUI-based user experience means that even non-technical
+          end-users can self-host software.</p>
+        </div>
+        <div class="col-6">
+          <div class="app_menu_screenshot">
+            <img src="/assets/images/iphone1_detail.png">
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <div class="section contrasting_font_color" data-anchor="pricing">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h4>Pricing</h4>
+        </div>
+        <div class="col-4">
+          <div class='segment_terms'>
+            <h3>Community</h3>
+            <h2>Free</h2>
+            <p> Non-commercial use<br>
+                One Engines system per account<br>
+                Management GUI runs locally</p>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class='segment_terms'>
+            <h3>Commercial</h3>
+            <h2>$1/GB/month</h2>
+            <p> Commercial use<br>
+                Unlimited Engines systems per account<br>
+                Management GUI runs locally or remotely</p>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class='segment_terms'>
+            <h3>Integrator</h3>
+            <h2>$50/month + $15/month/CAL</h2>
+            <p> System integrators and OEMs<br>
+              Remotely manage multiple systems across multiple accounts</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section small_text" data-anchor="install">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h4>Installing Engines</h4>
+          <p>Use a dedicated computer with at least 2GB RAM and 40GB available disk space.</p>
+          <p>The machine should be running a fresh and updated version of Linux
+            (<a href="http://www.ubuntu.com/download/server"
+                target= "engines_linux">Ubuntu Server 16.04 LTS</a> is recommended).</p>
+          <p>Login to your computer and enter...</p>
+          <pre>curl engines.org/install | bash</pre>
+          <p>You may need to enter your computer's admin password to start the installation.
+            You will be prompted to set a timezone.</p>
+          <p>The installer will take about half an hour to run.</p>
+          <p>The URL that you will use to access your
+             Engines web interface will appear at the end of the process.</p>
+          <p>Open a web browser, enter the URL and complete the setup wizard. You'll then be ready to install applications.</p>
+
+          <h5>Advanced</h5>
+          <p>Technical installation instructions, and a guide on how to install on AWS, can be found on the
+            <a href="http://tiki.prod.engines.org/tiki-index.php?page=Installation+Overview" target="engines_installation_wiki">Engines wiki installation page</a>.
+          </p>
+          <h5>Uninstall</h5>
+          <pre>curl engines.org/uninstall | bash</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section contrasting_font_color" data-anchor="technical">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h4>Technical overview</h4>
+          <p>The Engines System software provides a set of core services,
+            including certificates, volumes, databases, and backups.</p>
+          <p>Engines uses Docker to deploy apps and services within secure Linux containers.
+            Software can be installed from source, or using pre-built Docker containers.</p>
+          <p>When building from source, base images for a range frameworks, languages and application architectures are supported,
+            including OpenJDK, Apache/PHP, Jetty, Tomcat, Sinatra, Meteor, Lua, Node, Python, Rails, RStudio, Base C.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" data-anchor="library">
+    <div class="container">
+      <div class="row">
+        <p>Some of the apps that can be installed and run on Engines.</p>
+      </div>
+      <div class="row text-center">
+        <% @apps.each do |app| %>
+          <%= erb :_app, locals: { app: app } %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="section contrasting_font_color" data-anchor="blueprints">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h3>Developers</h3>
+          <p>There are many use cases where self-hosting server software would make sense for your users, yet the burden of managing the server environment gets in the way.</p>
+          <p>Engines can help. Our mission is to get your software into the hands of more users by lowering the technical hurdles faced by those that want to self-host.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" data-anchor="blueprints">
+    <div id="logo_mechanical">
+      <img src="/assets/images/logo_mechanical_drawing.png">
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h4>Blueprints</h4>
+          <p>A blueprint is a manifest that allows Engines to install and manage software.</p>
+          <p>A blueprint.json specifies details such as source file locations, environment, replacement strings, templated files, service configurations, and schedules.
+            <a href="https://github.com/EnginesBlueprints/Owncloud_new/blob/master/blueprint.json">Here is an example.</a></p>
+          <p>You can publish your blueprint in a libray to give an app store-like installation experience, or you can provide a URL to the blueprint for side-loading of software.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section contrasting_font_color" data-anchor="blueprints">
+    <div id="logo_mechanical">
+      <img src="/assets/images/logo_mechanical_drawing.png">
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h4>Studio</h4>
+          <p>The easiest way to produce a blueprint is to use the Engines Developer Studio.</p>
+          <p>It provides a form-based GUI for defining the contents of blueprints.json files.</p>
+        </div>
+        <div class="col-6">
+          <a href="/assets/images/screenshots/engines_developer_studio_1.png"><img class="screenshot" src="/assets/images/screenshots/engines_developer_studio_1.png"></img></a>
+        </div>
+        <div class="col-6">
+          <a href="/assets/images/screenshots/engines_developer_studio_2.png"><img class="screenshot" src="/assets/images/screenshots/engines_developer_studio_2.png"></img></a>
+        </div>
+        <div class="col-6">
+          <a href="/assets/images/screenshots/engines_developer_studio_3.png"><img class="screenshot" src="/assets/images/screenshots/engines_developer_studio_3.png"></img></a>
+        </div>
+        <div class="col-6">
+          <a href="/assets/images/screenshots/engines_developer_studio_4.png"><img class="screenshot" src="/assets/images/screenshots/engines_developer_studio_4.png"></img></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="section very_small_text" data-anchor="user_stories">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h3>At work</h3>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-3 col-6-sm">
+          <image src='assets/images/user_stories/sally.jpg'></image>
+          <p>Sally is a PR professional. She runs a database in the cloud for her consulting business. The database tracks projects and tasks across Sally's team, keeps record of industry contacts, stores press clippings, and generates reports for clients.</p>
+        </div>
+        <div class="col-3 col-6-sm">
+          <image src='assets/images/user_stories/sam.jpg'></image>
+          <p>Sam is a project manager. Sam fired-up a server in the office of his new employer to help the team collaborate better. The server is running Sam's favourite project management software and the others love it.</p>
+        </div>
+        <div class="col-3 col-6-sm">
+          <image src='assets/images/user_stories/mimi.jpg'></image>
+          <p>Mimi is a photographer. She has a server in the cloud for her portfolio website, client albums and back-ups. She has another in her studio for personal storage, to make it easier to work with big files.</p>
+        </div>
+        <div class="col-3 col-6-sm">
+          <image src='assets/images/user_stories/terrance.jpg'></image>
+          <p>Terrance is head of sales for his firm. He uses a CRM system that he shares with his two colleagues. He uses Engines because it allows him to run the CRM system that he likes without burdening the IT department with the build.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <h3>Techical use</h3>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-3 col-6-sm">
+          <image src='assets/images/user_stories/dan.jpg'></image>
+          <p>Dan is an IT consultant with many small business clients. He uses Engines for building core network services, including servers for files, email, printing, calendars and contacts. Dan is able to quickly deploy cost-effective solutions that work well and make clients happy.</p>
+        </div>
+        <div class="col-3 col-6-sm">
+          <image src='assets/images/user_stories/doug.jpg'></image>
+          <p>Doug is a management systems consultant. He uses a server to run machine learning applications that help him optimize client operations. Doug likes Engines because they make it easy for him to scale-up when he needs to handle large amounts of data.</p>
+        </div>
+        <div class="col-3 col-6-sm">
+          <image src='assets/images/user_stories/finn.jpg'></image>
+          <p>Finn is a web designer with a server in the cloud for hosting the websites that he builds for his clients. He also has a server in his office for web development. He likes Engines because he can easily move complex sites between physical and virtual hosting environments.</p>
+        </div>
+        <div class="col-3 col-6-sm">
+          <image src='assets/images/user_stories/anika.jpg'></image>
+          <p>Anika is an independent software developer. She writes custom applications for client businesses. Anika runs her apps in Engines to make deployment as easy as possible for her and her clients.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <h3>In school</h3>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-3 col-6-sm">
+          <image src='assets/images/user_stories/tim.jpg'></image>
+          <p>Tim is a teacher. He hosts a web forum for his students on a mini PC in his office. Students use the forum for downloading worksheets, asking questions, submitting homework, and receiving their results.</p>
+        </div>
+        <div class="col-3 col-6-sm">
+          <image src='assets/images/user_stories/jennyandspring.jpg'></image>
+          <p>Spring is a prize-winning show dog. Jenny built Spring a fanpage as a class project. She runs it from Engines on her Pi.</p>
+        </div>
+        <div class="col-3 col-6-sm">
+          <image src='assets/images/user_stories/william.jpg'></image>
+          <p>William set-up a sports team server for his basketball team. It helps the coach, players and parents keep organised and engaged. The photos and messages that everyone is posting will make a great keepsake of the season.</p>
+        </div>
+        <div class="col-3 col-6-sm">
+          <image src='assets/images/user_stories/justin.jpg'></image>
+          <p>Justin has recut some open source to build a better server application for managing restaurants. He has published his work using Engines to make it easy to showcase his development skills to potential employers.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <h3>At home</h3>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-3 col-6-sm">
+          <image src='assets/images/user_stories/rick.jpg'></image>
+          <p>Rick runs his music library from his personal server. He hosts from his bedroom and has over twenty gigs of songs.</p>
+        </div>
+        <div class="col-3 col-6-sm">
+          <image src='assets/images/user_stories/elise.jpg'></image>
+          <p>Elise reads lots of books. She uses Engines to run a library to house her ebook collection. She runs a web forum for her bookclub from the same machine.</p>
+        </div>
+        <div class="col-3 col-6-sm">
+          <image src='assets/images/user_stories/alberto.jpg'></image>
+          <p>Alberto is an ace pilot...on the multi-player fighter plane game that he runs on Engines.</p>
+        </div>
+        <div class="col-3 col-6-sm">
+          <image src='assets/images/user_stories/susan.jpg'></image>
+          <p>Susan is passionate about fitness. Her personal server logs her biometrics and helps Susan analyse her progress.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-3 col-6-sm">
+          <image src='assets/images/user_stories/marty.jpg'></image>
+          <p>Marty has a seriously geeked-out digital home. He is running a file server, email server, calendar server, contacts server, media server and home automation server. All this on a computer with an average draw of less than 5 watts. Wow. Marty, you're a legend.</p>
+        </div>
+        <div class="col-3 col-6-sm">
+          <image src='assets/images/user_stories/ashi.jpg'></image>
+          <p>Ashi and her friends like to chat online. Ashi runs a private instant messaging service so they can have a social network all to themselves.</p>
+        </div>
+        <div class="col-3 col-6-sm">
+          <image src='assets/images/user_stories/heather.jpg'></image>
+          <p>Heather runs a personal family website and genealogy blog. The whole clan uses the site to privately share memories for posterity.</p>
+        </div>
+        <div class="col-3 col-6-sm">
+          <image src='assets/images/user_stories/charlie.jpg'></image>
+          <p>Charlie runs a Minecraft server from home. Charlie and his friends connect from anywhere and work together to build amazing virtual worlds.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+  <div class="section contrasting_font_color" data-anchor="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <p>Engines is under active development by James Vodanovich
+          <a href="mailto:james@engines.org">james@engines.org</a>
+          and Lachlan Douglas
+          <a href="mailto:lachlan@engines.org">lachlan@engines.org</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>

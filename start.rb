@@ -5,7 +5,8 @@ require 'redcarpet'
 
 get '/' do
   begin
-    IndexHtml ||= index_html
+    # IndexHtml ||=
+    index_html
   rescue => e
     'Could not load apps from: ' + engines_library_uri.to_s + ' ' + e.to_s
   end
@@ -18,7 +19,8 @@ end
 
 get '/apps' do
   p "Loaded library_apps #{library_apps}"
-  AppsHtml ||= apps_html
+  # AppsHtml ||= 
+  apps_html
 end
 
 def apps_html
@@ -30,12 +32,24 @@ get '/get_engines' do
   erb :get_engines, layout: :layout
 end
 
+get '/devs' do
+  erb :devs, layout: :layout
+end
+
 get '/install' do
   File.read 'install_script.sh'
 end
 
 get '/uninstall' do
   File.read 'uninstall_script.sh'
+end
+
+get '/user_stories' do
+  erb :user_stories, layout: :layout
+end
+
+get '/technical_brief' do
+  erb :technical_brief, layout: :layout
 end
 
 def apps_json
@@ -50,7 +64,7 @@ def apps_json
 end
 
 def engines_library_uri
-  ENV['ENGINES_LIBRARY_API_URI'] || "http://localhost:3010" || "https://appslib.current.engines.org/"
+  ENV['ENGINES_LIBRARY_API_URI']  || "https://library.engines.org/" #|| "http://localhost:3010"
 end
 
 def library_apps
