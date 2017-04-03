@@ -39,19 +39,24 @@ html {
 
 /*SCREENSHOTS*/
 .screenshot { width: 100%; }
-.app_menu_screenshot { text-align: center; }
-.app_menu_screenshot img { width: 66%; }
 
-/*CAROUSELS*/
+/*MGMT CAROUSEL*/
+.mgmt_screenshots_carousel_slide { text-align: center; }
+.mgmt_screenshots_carousel img { width: 66%; display: inline-block; }
+.mgmt_screenshots_carousel_arrows { text-align: center; }
+
+/*USER STORIES CAROUSEL*/
 .user_stories_carousel_slide { margin-bottom: 25px; }
+.user_stories_carousel_arrows { text-align: right; }
 .user_stories_carousel_slide img { float: left; margin-right: 10px; }
 @media only screen and (max-width: 45em) {
   .user_stories_carousel_slide img { float: none; margin-right: 0px; margin-bottom: 10px; }
 }
 
-
+/*CAROUSELS*/
 /*.slick_carousel_wrapper { display: inline-block; }*/
-.slick-arrow { font-size: 2em; color: #666; }
+.carousel_arrows { font-size: 2em; }
+.carousel_arrow { cursor: pointer; }
 /*.slick-list { display: inline-block; }*/
 /*.carousel_slide img { width: 200px; }*/
 .slick-dots li button:before {

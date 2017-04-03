@@ -6,17 +6,33 @@ $(document).ready(function() {
 	reset_all_items();
 });
 
-// Init carousel for Developer Studio screenshots
+// Init carousel for user stories
 $(document).ready(function() {
 	$('.user_stories_carousel').slick({
-		nextArrow: '<i class="fa fa-arrow-right"></i>',
-		prevArrow: '<i class="fa fa-arrow-left"></i>',
-		dots: true,
-  	// variableWidth: true
-	// add the rest of your options here
+		arrows: false,
+		dots: true
+	});
+	$('.user_stories_carousel_arrow_right').on('click', function () {
+		$('.user_stories_carousel').slick('slickNext');
+	});
+	$('.user_stories_carousel_arrow_left').on('click', function () {
+		$('.user_stories_carousel').slick('slickPrev');
 	});
 });
 
+// Init carousel for mgmt screenshots
+$(document).ready(function() {
+	$('.mgmt_screenshots_carousel').slick({
+		arrows: false,
+		dots: false
+	});
+	$('.mgmt_screenshots_carousel_arrow_right').on('click', function () {
+		$('.mgmt_screenshots_carousel').slick('slickNext');
+	});
+	$('.mgmt_screenshots_carousel_arrow_left').on('click', function () {
+		$('.mgmt_screenshots_carousel').slick('slickPrev');
+	});
+});
 
 // Init fullPage
 $(document).ready(function() {
