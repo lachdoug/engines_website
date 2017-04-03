@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	$('#page_loading_spinner').show();
 	$.get('/index_content', function( data ) {
 	  $('body').append( data );
 		set_up_index_content();
@@ -12,6 +13,7 @@ var set_up_index_content = function() {
 
 	// Init carousel for user stories
 	$('.user_stories_carousel').slick({
+		swipeToSlide: true,
 		arrows: false,
 		dots: true
 	});
@@ -24,6 +26,7 @@ var set_up_index_content = function() {
 
 	// Init carousel for mgmt screenshots
 	$('.mgmt_screenshots_carousel').slick({
+		swipeToSlide: true,
 		arrows: false,
 		dots: false
 	});
@@ -36,6 +39,7 @@ var set_up_index_content = function() {
 
 	// Init carousel for mgmt screenshots
 	$('.apps_carousel').slick({
+		swipeToSlide: true,
 		centerPadding: '60px',
 	  slidesToShow: 5,
 	  responsive: [
@@ -69,7 +73,7 @@ var set_up_index_content = function() {
 		//Navigation
 		// menu: '#menu',
 		// lockAnchors: false,
-		anchors:['welcome', 'about1', 'about2', 'pricing', 'library', 'user_stories', 'install', 'technical', 'contact', 'developers', 'blueprints', 'studio'],
+		// anchors:['welcome', 'about1', 'about2', 'pricing', 'library', 'user_stories', 'install', 'technical', 'contact', 'developers', 'blueprints', 'studio'],
 		navigation: true,
 		navigationPosition: 'left',
 		// navigationTooltips: ['welcome', 'install', 'about', 'library'],
@@ -143,7 +147,7 @@ var set_up_index_content = function() {
 			if ( index == 1 ) {
 				setTimeout(function(){
 					$('#phone1').animate(
-						{ opacity: 1 }, 250, function() {
+						{ opacity: 1 }, 500, function() {
 							// Animation complete.
 			  		}
 					)
