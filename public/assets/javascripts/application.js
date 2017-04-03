@@ -1,13 +1,16 @@
-var reset_all_items = function(){
-	$('#phone1').css('opacity', '0');
-};
-
 $(document).ready(function() {
-	reset_all_items();
+	$.get('/index_content', function( data ) {
+	  $('body').append( data );
+		set_up_index_content();
+	});
 });
 
-// Init carousel for user stories
-$(document).ready(function() {
+var set_up_index_content = function() {
+	$('#phone1').css('opacity', '0');
+	$('#page_loading_spinner').hide();
+	$('#fullpage').show();
+
+	// Init carousel for user stories
 	$('.user_stories_carousel').slick({
 		arrows: false,
 		dots: true
@@ -18,10 +21,8 @@ $(document).ready(function() {
 	$('.user_stories_carousel_arrow_left').on('click', function () {
 		$('.user_stories_carousel').slick('slickPrev');
 	});
-});
 
-// Init carousel for mgmt screenshots
-$(document).ready(function() {
+	// Init carousel for mgmt screenshots
 	$('.mgmt_screenshots_carousel').slick({
 		arrows: false,
 		dots: false
@@ -32,15 +33,43 @@ $(document).ready(function() {
 	$('.mgmt_screenshots_carousel_arrow_left').on('click', function () {
 		$('.mgmt_screenshots_carousel').slick('slickPrev');
 	});
-});
 
-// Init fullPage
-$(document).ready(function() {
+	// Init carousel for mgmt screenshots
+	$('.apps_carousel').slick({
+		centerPadding: '60px',
+	  slidesToShow: 5,
+	  responsive: [
+	    {
+	      breakpoint: 768,
+	      settings: {
+	        centerPadding: '40px',
+	        slidesToShow: 3
+	      }
+	    },
+	    {
+	      breakpoint: 480,
+	      settings: {
+	        centerPadding: '40px',
+	        slidesToShow: 1
+	      }
+	    }
+	  ],
+		arrows: false,
+		dots: false
+	});
+	$('.apps_carousel_arrow_right').on('click', function () {
+		$('.apps_carousel').slick('slickNext');
+	});
+	$('.apps_carousel_arrow_left').on('click', function () {
+		$('.apps_carousel').slick('slickPrev');
+	});
+
+	// Init fullPage
 	$('#fullpage').fullpage({
 		//Navigation
 		// menu: '#menu',
 		// lockAnchors: false,
-		anchors:['welcome', 'about1', 'about2', 'pricing', 'library', 'install', 'user_stories', 'technical', 'contact', 'developers', 'blueprints', 'studio'],
+		anchors:['welcome', 'about1', 'about2', 'pricing', 'library', 'user_stories', 'install', 'technical', 'contact', 'developers', 'blueprints', 'studio'],
 		navigation: true,
 		navigationPosition: 'left',
 		// navigationTooltips: ['welcome', 'install', 'about', 'library'],
@@ -118,7 +147,7 @@ $(document).ready(function() {
 							// Animation complete.
 			  		}
 					)
-				},500)
+				},0)
 	 		};
 		},
 		// afterRender: function(){},
@@ -127,4 +156,10 @@ $(document).ready(function() {
 		// afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
 		// onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
 	});
-});
+
+  // Redraw carousels after fullPage renderer
+	$('.user_stories_carousel').slick('setPosition');
+	$('.mgmt_screenshots_carousel').slick('setPosition');
+	$('.apps_carousel').slick('setPosition');
+
+};

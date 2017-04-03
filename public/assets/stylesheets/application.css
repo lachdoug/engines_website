@@ -16,6 +16,7 @@ html {
 
 /*ICONS*/
 .big_icon { font-size: 48px;}
+.index_app { height: 150px; }
 
 /*LOGO*/
 .engines_logo { height: 125px; margin-left: -10px; }
@@ -40,6 +41,11 @@ html {
 /*SCREENSHOTS*/
 .screenshot { width: 100%; }
 
+/*APPS CAROUSEL*/
+.apps_carousel_arrows { text-align: right; }
+.apps_carousel_slide { text-align: center; }
+.apps_carousel_slide .app_icon img { display: inline-block; }
+
 /*MGMT CAROUSEL*/
 .mgmt_screenshots_carousel_slide { text-align: center; }
 .mgmt_screenshots_carousel img { width: 66%; display: inline-block; }
@@ -62,7 +68,9 @@ html {
 .slick-dots li button:before {
     font-size: 32px;
     line-height: 32px;
+    color: #FFF;
 }
+.slick-dots li.slick-active button:before { color: #FFF; }
 
 /*LOGO MECHANICAL DRAWING*/
 #logo_mechanical { opacity: 0.1; position: absolute; padding-left: 15%; }
