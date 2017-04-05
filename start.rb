@@ -9,8 +9,7 @@ end
 
 get '/index_content' do
   begin
-    # IndexHtml ||=
-    index_content_html
+    IndexContentHtml ||= index_content_html
   rescue => e
     'Could not load apps from: ' + engines_library_uri.to_s + ' ' + e.to_s
   end
@@ -18,8 +17,12 @@ end
 
 def index_content_html
   @apps = library_apps
+  @example_blueprint_json = example_blueprint_json
   erb :index_content, layout: false
 end
+
+
+
 
 # get "/new_game" do
 #   content_type 'text/javascript'
@@ -63,8 +66,8 @@ end
 # end
 
 def apps_json
+  url = "#{engines_library_uri}/api/v0/apps.json"
   begin
-    url = "#{engines_library_uri}/api/v0/apps.json"
     RestClient.get url
   rescue
     # Try again with invalid ssl
@@ -73,9 +76,30 @@ def apps_json
   end
 end
 
-def engines_library_uri
-  ENV['ENGINES_LIBRARY_API_URI']  || "https://library.engines.org/" #|| "http://localhost:3010"
+def example_blueprint_json
+  url = example_blueprint_uri
+  begin
+    RestClient.get url
+  rescue
+    # Try again with invalid ssl
+    p "Warning: The example blueprint certificate is invalid!"
+    RestClient::Request.execute( method: :get, url: url, headers: {}, verify_ssl: false )
+  rescue
+    nil
+  end
 end
+
+def engines_library_uri
+  ENV['ENGINES_LIBRARY_API_URI']  || "http://library.engines.org/" #|| "http://localhost:3010"
+end
+
+def example_blueprint_uri
+  ENV['ENGINES_EXAMPLE_BLUEPRINT_URI']  || "https://raw.githubusercontent.com/EnginesBlueprints/Owncloud_new/master/blueprint.json"
+end
+
+
+
+
 
 def library_apps
   @@library_apps ||= apps_from_schema(JSON.parse(apps_json))

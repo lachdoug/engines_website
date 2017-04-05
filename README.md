@@ -15,3 +15,7 @@ Environment
 
 ENV['ENGINES_LIBRARY_API_URI']
 The application will look here fore a list of applications.
+Default is "http://library.engines.org/"
+
+ENV['ENGINES_EXAMPLE_BLUEPRINT_URI']
+Default is "https://raw.githubusercontent.com/EnginesBlueprints/Owncloud_new/master/blueprint.json"

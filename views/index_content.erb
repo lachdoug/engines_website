@@ -1,12 +1,19 @@
 <div id="fullpage" style="display: none;">
 
-  <div class="section" data-anchor="welcome">
+  <div class="section" data-anchor="home">
     <div class="container">
       <div class="row">
         <div class="col-6">
           <a href="/"><img src="/assets/images/logo_transparent.png" class="engines_logo"></a>
-          <h4>Self-host your software</h4>
+          <h4>Self-host software</h4>
           <p><a href="#install" class="button"><i class="fa fa-download"></i> Get Engines</a></p>
+          <p>
+
+            <% if false %>
+              <video controls="" width="100%" src="/assets/videos/engines_promo_video.m4v" type="video/mp4"></video>
+            <% end %>
+
+          </p>
         </div>
         <div class="col-6">
           <div id="phone1" class="iphone_wrapper">
@@ -17,7 +24,7 @@
     </div>
   </div>
 
-  <div class="section contrasting_font_color" data-anchor="about1">
+  <div class="section contrasting_font_color" data-anchor="overview">
     <div class="container">
       <div class="row">
         <div class="col-4 col-6-sm text-center">
@@ -50,7 +57,7 @@
     </div>
   </div>
 
-  <div class="section" data-anchor="about2">
+  <div class="section" data-anchor="management">
     <div class="container">
       <div class="row">
         <div class="col-6">
@@ -59,11 +66,7 @@
           <p>The GUI-based user experience means that even non-technical
           end-users can self-host software.</p>
         </div>
-
-
-
         <div class="col-6">
-
           <div class="mgmt_screenshots_carousel">
             <div class="mgmt_screenshots_carousel_slide">
               <img src='assets/images/screenshots/engines_mgmt_1.png'></img>
@@ -92,189 +95,210 @@
       <div class="row">
         <div class="col-4">
           <div class='segment_terms'>
-            <h3>Community</h3>
+            <h4>Community</h4>
             <h2>Free<br>&nbsp;</h2>
-            <p> Non-commercial use<br>
+            <p> <strong>Non-commercial use</strong><br>
                 One Engines system per account<br>
                 Management GUI runs locally</p>
           </div>
         </div>
         <div class="col-4">
           <div class='segment_terms'>
-            <h3>Commercial</h3>
-            <h2>$1/GB/month<br>&nbsp;</h2>
-            <p> Commercial use<br>
+            <h4>Commercial</h4>
+            <h2>$1/GB*/month<br>&nbsp;</h2>
+            <p> <strong>Commercial use</strong><br>
                 Unlimited Engines systems per account<br>
-                Management GUI can run locally or remotely</p>
+                Management GUI can run locally or remotely<br>
+                * System RAM</p>
           </div>
         </div>
         <div class="col-4">
           <div class='segment_terms'>
-            <h3>Integrator</h3>
-            <h2>$50/month +<br>$15/CAL/month</h2>
-            <p> System integrators and OEMs<br>
-              Remotely manage multiple systems across multiple accounts</p>
+            <h4>Integrator</h4>
+            <h2>$50/month +<br>$15/CAL*/month</h2>
+            <p> <strong>System integrators, IT providers and OEMs</strong><br>
+              Remotely manage multiple systems across multiple accounts<br>
+              Managed systems must have commercial licenses<br>
+              * Client Access License</p>
           </div>
+        </div>
+        <div class="col-12">
+          &nbsp;
         </div>
       </div>
     </div>
   </div>
 
-  <div class="section small_text" data-anchor="library">
+  <div class="section small_text" data-anchor="apps">
     <div class="container">
       <div class="row">
-        <p>Some of the apps that can deployed on Engines</p>
-        <br>
-      </div>
-
-      <div class="apps_carousel">
-        <% @apps.each_slice(3) do |group_of_apps| %>
-          <div class="apps_carousel_slide">
-            <% group_of_apps.each do |app| %>
-              <%= erb :_app, locals: { app: app } %>
+        <div class="col-12">
+          <p>Engines can run all sorts of apps. Here's a selection from the Engines app library.</p>
+          <div class="apps_carousel">
+            <% @apps.each_slice(3) do |group_of_apps| %>
+              <div class="apps_carousel_slide">
+                <% group_of_apps.each do |app| %>
+                  <%= erb :_app, locals: { app: app } %>
+                <% end %>
+              </div>
             <% end %>
           </div>
-        <% end %>
+          <div class="carousel_arrows apps_carousel_arrows">
+            <div class="fa fa-arrow-left carousel_arrow apps_carousel_arrow_left"></div>
+            <div class="fa fa-arrow-right carousel_arrow apps_carousel_arrow_right"></div>
+          </div>
+        </div>
       </div>
-
-      <div class="carousel_arrows apps_carousel_arrows">
-        <div class="fa fa-arrow-left carousel_arrow apps_carousel_arrow_left"></div>
-        <div class="fa fa-arrow-right carousel_arrow apps_carousel_arrow_right"></div>
-      </div>
-
     </div>
   </div>
 
   <div class="section contrasting_font_color" data-anchor="user_stories">
     <div class="container">
       <div class="row">
+        <div class="col-12">
 
-        <div class="carousel_arrows user_stories_carousel_arrows">
-          <div class="fa fa-arrow-left carousel_arrow user_stories_carousel_arrow_left"></div>
-          <div class="fa fa-arrow-right carousel_arrow user_stories_carousel_arrow_right"></div>
+          <div class="carousel_arrows user_stories_carousel_arrows">
+            <div class="fa fa-arrow-left carousel_arrow user_stories_carousel_arrow_left"></div>
+            <div class="fa fa-arrow-right carousel_arrow user_stories_carousel_arrow_right"></div>
+          </div>
+
+          <div class="user_stories_carousel">
+            <div class="user_stories_carousel_slide">
+              <p>
+                <img src='assets/images/user_stories/mimi.jpg'></img>
+                Mimi is a photographer. She uses Engines because it is a more cost effective way to run her portfolio website, client albums and file storage.
+              </p>
+            </div>
+            <div class="user_stories_carousel_slide">
+              <p>
+                <img src='assets/images/user_stories/dmitri.jpg'></img>
+                Dmitri designs and commissions smart building control systems. He uses Engines because it allows him to quickly deploy software across clients' sites.
+              </p>
+            </div>
+            <div class="user_stories_carousel_slide">
+              <p>
+                <img src='assets/images/user_stories/terrance.jpg'></img>
+                Terrance is head of sales for his firm. He uses Engines because it allows him to run the CRM system that he likes without burdening the IT department with the build.
+              </p>
+            </div>
+            <div class="user_stories_carousel_slide">
+              <p>
+                <img src='assets/images/user_stories/dan.jpg'></img>
+                Dan is an IT consultant with many small- and medium-sized business clients. He uses Engines for building core IT services for file storage, email, calendars, contacts and document collaboration.
+              </p>
+            </div>
+            <div class="user_stories_carousel_slide">
+              <p>
+                <img src='assets/images/user_stories/sally.jpg'></img>
+                Sally runs a custom web app for managing her consulting business. The app runs on Engines and tracks projects and tasks across Sally's team, and generates reports for clients.
+              </p>
+            </div>
+            <div class="user_stories_carousel_slide">
+              <p>
+                <img src='assets/images/user_stories/sam.jpg'></img>
+                Sam is a project manager. Sam uses Engines to run project management software, a project document management system, and a messaging system for his team.
+              </p>
+            </div>
+            <div class="user_stories_carousel_slide">
+              <p>
+                <img src='assets/images/user_stories/doug.jpg'></img>
+                Doug is a machine learning expert. Engines makes it easy for him to deploy his custom machine learning software for research and client work.
+              </p>
+            </div>
+            <div class="user_stories_carousel_slide">
+              <p>
+                <img src='assets/images/user_stories/finn.jpg'></img>
+                Finn is a web designer. He uses Engines on a VPS for hosting the websites that he builds for his clients. He also has a physical server in his office for running his development environment.
+              </p>
+            </div>
+            <div class="user_stories_carousel_slide">
+              <p>
+                <img src='assets/images/user_stories/anika.jpg'></img>
+                Anika is an independent software developer. She writes custom applications for client businesses. Anika runs her apps using Engines to make deployment as easy as possible for her and her clients.
+              </p>
+            </div>
+            <div class="user_stories_carousel_slide">
+              <p>
+                <img src='assets/images/user_stories/tim.jpg'></img>
+                Tim is a teacher. He uses Engines to host a forum for students to download worksheets, ask questions, submit homework, and receive results.
+              </p>
+            </div>
+            <div class="user_stories_carousel_slide">
+              <p>
+                <img src='assets/images/user_stories/jennyandspring.jpg'></img>
+                Spring is a prize-winning show dog. Jenny built Spring a fanpage as a class project. She runs it on Engines.
+              </p>
+            </div>
+            <div class="user_stories_carousel_slide">
+              <p>
+                <img src='assets/images/user_stories/mason.jpg'></img>
+                Mason says that he's being watched. He's feeling a lot calmer now that Engines allows him to run a VPN to a personal VPS, to keep his information secure.
+              </p>
+            </div>
+            <div class="user_stories_carousel_slide">
+              <p>
+                <img src='assets/images/user_stories/william.jpg'></img>
+                William uses Engines to run a sports team app for his basketball team. It helps the coach, players and parents keep organised and engaged.
+              </p>
+            </div>
+            <div class="user_stories_carousel_slide">
+              <p>
+                <img src='assets/images/user_stories/justin.jpg'></img>
+                Justin and Valerie are working on an open source application. They are publishing their work using Engines to get their app to users.
+              </p>
+            </div>
+            <div class="user_stories_carousel_slide">
+              <p>
+                <img src='assets/images/user_stories/rick.jpg'></img>
+                Rick runs his music library from his personal server. He hosts from his bedroom and has over two hundred gigs of songs.
+              </p>
+            </div>
+            <div class="user_stories_carousel_slide">
+              <p>
+                <img src='assets/images/user_stories/elise.jpg'></img>
+                Elise uses Engines to run a library to house her ebook collection. She also runs a web forum for her bookclub from the same machine.
+              </p>
+            </div>
+            <div class="user_stories_carousel_slide">
+              <p>
+                <img src='assets/images/user_stories/alberto.jpg'></img>
+                Alberto is an ace pilot...on the multi-player fighter plane game that he serves from Engines.
+              </p>
+            </div>
+            <div class="user_stories_carousel_slide">
+              <p>
+                <img src='assets/images/user_stories/susan.jpg'></img>
+                Susan is passionate about fitness. Her personal server logs her biometrics and helps her analyse her progress.
+              </p>
+            </div>
+            <div class="user_stories_carousel_slide">
+              <p>
+                <img src='assets/images/user_stories/marty.jpg'></img>
+                Marty has a seriously geeked-out digital home. He is using Engines to run a home automation server and security system.
+              </p>
+            </div>
+            <div class="user_stories_carousel_slide">
+              <p>
+                <img src='assets/images/user_stories/ashi.jpg'></img>
+                Ashi and her friends like to chat online. Ashi runs a private instant messaging service so they can have a social network all to themselves.
+              </p>
+            </div>
+            <div class="user_stories_carousel_slide">
+              <p>
+                <img src='assets/images/user_stories/heather.jpg'></img>
+                Heather runs a personal family website and genealogy blog. The whole clan uses the site to privately share memories for posterity.
+              </p>
+            </div>
+            <div class="user_stories_carousel_slide">
+              <p>
+                <img src='assets/images/user_stories/charlie.jpg'></img>
+                Charlie runs a game server from home. Charlie and his friends connect from anywhere to play and build together.
+              </p>
+            </div>
+          </div>
         </div>
-
-        <div class="user_stories_carousel">
-          <div class="user_stories_carousel_slide">
-            <p>
-              <img src='assets/images/user_stories/mimi.jpg'></img>
-              Mimi is a photographer. She has a server in the cloud for her portfolio website, client albums and back-ups. She has another in her studio for personal storage, to make it easier to work with big files.
-            </p>
-          </div>
-          <div class="user_stories_carousel_slide">
-            <p>
-              <img src='assets/images/user_stories/terrance.jpg'></img>
-              Terrance is head of sales for his firm. He uses a CRM system that he shares with his two colleagues. He uses Engines because it allows him to run the CRM system that he likes without burdening the IT department with the build.
-            </p>
-          </div>
-          <div class="user_stories_carousel_slide">
-            <p>
-              <img src='assets/images/user_stories/dan.jpg'></img>
-              Dan is an IT consultant with many small business clients. He uses Engines for building core network services, including servers for files, email, printing, calendars and contacts. Dan is able to quickly deploy cost-effective solutions that work well and make clients happy.
-            </p>
-          </div>
-          <div class="user_stories_carousel_slide">
-            <p>
-              <img src='assets/images/user_stories/sally.jpg'></img>
-              Sally is a PR professional. She runs a database in the cloud for her consulting business. The database tracks projects and tasks across Sally's team, keeps record of industry contacts, stores press clippings, and generates reports for clients.
-            </p>
-          </div>
-          <div class="user_stories_carousel_slide">
-            <p>
-              <img src='assets/images/user_stories/sam.jpg'></img>
-              Sam is a project manager. Sam fired-up a server in the office of his new employer to help the team collaborate better. The server is running Sam's favourite project management software and the others love it.
-            </p>
-          </div>
-          <div class="user_stories_carousel_slide">
-            <p>
-              <img src='assets/images/user_stories/doug.jpg'></img>
-              Doug is a management systems consultant. He uses a server to run machine learning applications that help him optimize client operations. Doug likes Engines because they make it easy for him to scale-up when he needs to handle large amounts of data.
-            </p>
-          </div>
-          <div class="user_stories_carousel_slide">
-            <p>
-              <img src='assets/images/user_stories/finn.jpg'></img>
-              Finn is a web designer with a server in the cloud for hosting the websites that he builds for his clients. He also has a server in his office for web development. He likes Engines because he can easily move complex sites between physical and virtual hosting environments.
-            </p>
-          </div>
-          <div class="user_stories_carousel_slide">
-            <p>
-              <img src='assets/images/user_stories/anika.jpg'></img>
-              Anika is an independent software developer. She writes custom applications for client businesses. Anika runs her apps in Engines to make deployment as easy as possible for her and her clients.
-            </p>
-          </div>
-          <div class="user_stories_carousel_slide">
-            <p>
-              <img src='assets/images/user_stories/tim.jpg'></img>
-              Tim is a teacher. He hosts a web forum for his students on a mini PC in his office. Students use the forum for downloading worksheets, asking questions, submitting homework, and receiving their results.
-            </p>
-          </div>
-          <div class="user_stories_carousel_slide">
-            <p>
-              <img src='assets/images/user_stories/jennyandspring.jpg'></img>
-              Spring is a prize-winning show dog. Jenny built Spring a fanpage as a class project. She runs it from Engines on her Pi.
-            </p>
-          </div>
-          <div class="user_stories_carousel_slide">
-            <p>
-              <img src='assets/images/user_stories/william.jpg'></img>
-              William set-up a sports team server for his basketball team. It helps the coach, players and parents keep organised and engaged. The photos and messages that everyone is posting will make a great keepsake of the season.
-            </p>
-          </div>
-          <div class="user_stories_carousel_slide">
-            <p>
-              <img src='assets/images/user_stories/justin.jpg'></img>
-              Justin has recut some open source to build a better server application for managing restaurants. He has published his work using Engines to make it easy to showcase his development skills to potential employers.
-            </p>
-          </div>
-          <div class="user_stories_carousel_slide">
-            <p>
-              <img src='assets/images/user_stories/rick.jpg'></img>
-              Rick runs his music library from his personal server. He hosts from his bedroom and has over twenty gigs of songs.
-            </p>
-          </div>
-          <div class="user_stories_carousel_slide">
-            <p>
-              <img src='assets/images/user_stories/elise.jpg'></img>
-              Elise reads lots of books. She uses Engines to run a library to house her ebook collection. She runs a web forum for her bookclub from the same machine.
-            </p>
-          </div>
-          <div class="user_stories_carousel_slide">
-            <p>
-              <img src='assets/images/user_stories/alberto.jpg'></img>
-              Alberto is an ace pilot...on the multi-player fighter plane game that he runs on Engines.
-            </p>
-          </div>
-          <div class="user_stories_carousel_slide">
-            <p>
-              <img src='assets/images/user_stories/susan.jpg'></img>
-              Susan is passionate about fitness. Her personal server logs her biometrics and helps Susan analyse her progress.
-            </p>
-          </div>
-          <div class="user_stories_carousel_slide">
-            <p>
-              <img src='assets/images/user_stories/marty.jpg'></img>
-              Marty has a seriously geeked-out digital home. He is running a file server, email server, calendar server, contacts server, media server and home automation server. All this on a computer with an average draw of less than 5 watts. Wow. Marty, you're a legend.
-            </p>
-          </div>
-          <div class="user_stories_carousel_slide">
-            <p>
-              <img src='assets/images/user_stories/ashi.jpg'></img>
-              Ashi and her friends like to chat online. Ashi runs a private instant messaging service so they can have a social network all to themselves.
-            </p>
-          </div>
-          <div class="user_stories_carousel_slide">
-            <p>
-              <img src='assets/images/user_stories/heather.jpg'></img>
-              Heather runs a personal family website and genealogy blog. The whole clan uses the site to privately share memories for posterity.
-            </p>
-          </div>
-          <div class="user_stories_carousel_slide">
-            <p>
-              <img src='assets/images/user_stories/charlie.jpg'></img>
-              Charlie runs a Minecraft server from home. Charlie and his friends connect from anywhere and work together to build amazing virtual worlds.
-            </p>
-          </div>
+        <div class="col-12">
+          &nbsp;
         </div>
 
       </div>
@@ -291,7 +315,7 @@
             (<a href="http://www.ubuntu.com/download/server"
                 target= "engines_linux">Ubuntu Server 16.04 LTS</a> is recommended).</p>
           <p>Login to your computer and enter...</p>
-          <pre>curl engines.org/install | bash</pre>
+          <pre class="wrap_line">curl engines.org/install | bash</pre>
           <p>You may need to enter your computer's admin password to start the installation.
             You will be prompted to set a timezone. The installer will take about half an hour to run.</p>
           <p>The URL that you will use to access your
@@ -303,7 +327,10 @@
             <a href="http://tiki.prod.engines.org/tiki-index.php?page=Installation+Overview" target="engines_installation_wiki">Engines wiki installation page</a>.
           </p>
           <h5>Uninstall</h5>
-          <pre>curl engines.org/uninstall | bash</pre>
+          <pre class="wrap_line">curl engines.org/uninstall | bash</pre>
+        </div>
+        <div class="col-12">
+          &nbsp;
         </div>
       </div>
     </div>
@@ -315,11 +342,17 @@
         <div class="col-12">
           <h4>Technical</h4>
           <p>The Engines System software provides a set of core services,
-            including certificates, volumes, databases, and backups.</p>
-          <p>Engines uses Docker to deploy apps and services within secure Linux containers.
-            Software can be installed from source, or using pre-built Docker containers.</p>
-          <p>When building from source, base images for a range frameworks, languages and application architectures are supported,
-            including OpenJDK, Apache/PHP, Jetty, Tomcat, Sinatra, Meteor, Lua, Node, Python, Rails, RStudio, Base C.</p>
+            including volumes, databases, certificates and backups.</p>
+          <p>Engines uses Docker to deploy apps and services within sandboxed
+             Linux containers. Software can be installed from source, or using
+              pre-built Docker containers.</p>
+          <p>When building from source, base images for a range frameworks,
+            languages and application architectures are supported,
+            including OpenJDK, Apache/PHP, Jetty, Tomcat, Sinatra, Meteor,
+            Lua, Node, Python, Rails, RStudio and Base&nbsp;C.</p>
+        </div>
+        <div class="col-12">
+          &nbsp;
         </div>
       </div>
     </div>
@@ -332,19 +365,48 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <h3>Developers</h3>
-          <p>There are many use cases where self-hosting server software would make sense for your users, yet the burden of managing the server environment gets in the way.</p>
-          <p>Engines can help. Our mission is to get your software into the hands of more users by lowering the technical hurdles faced by those that want to self-host.</p>
+          <h4>Developers</h4>
+          <p>There are many use cases where self-hosting server software would
+             make sense for your users, yet the burden of managing the server
+             environment gets in the way.</p>
+          <p>Engines can help. Our mission is to get your software into the
+            hands of more users by lowering the technical hurdles faced by
+            those that want to self-host.</p>
+          <p>On the commercial side, Engines will incorporate a licensing and
+             payment system, so that you can get properly rewarded for writing
+             great self-hosted software.</p>
+        </div>
+        <div class="col-12">
+          &nbsp;
         </div>
       </div>
     </div>
   </div>
 
-  <div class="section contrasting_font_color" data-anchor="developer_fees">
+  <div class="section contrasting_font_color" data-anchor="integrators">
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <p>...something about proprietary apps and payment processing fees...</p>
+          <h4>Integrators</h4>
+          <p>Are you a system integrator, IT provider or OEM? You can use
+            Engines to power your own platform!</p>
+          <p>SAAS is not always the best model for you or your clients.
+             Engines allows self-hosting to be a more viable option, so that
+             your business can deliver something different and better:
+              self-hosting without the hassle.
+              Engines lets you give your clients what is best for
+            them, in a way that allows you to maintain direct relationships
+             across a scalable client-base.</p>
+          <p>Engines lets you remotely manage systems from a common
+            management GUI. You can own and operate Engines systems on your
+            account for your clients, or get authority from clients to
+            manage systems that are owned by them.</p>
+          <p>And you can connect your own app store, which means that you can have
+            control over how software, particularly proprietary and custom
+            software, is delivered to your clients.</p>
+        </div>
+        <div class="col-12">
+          &nbsp;
         </div>
       </div>
     </div>
@@ -359,43 +421,54 @@
         <div class="col-12">
           <h4>Blueprints</h4>
           <p>A blueprint is a manifest that allows Engines to install and manage software.</p>
-          <p>A blueprint.json specifies details such as source file locations, environment, replacement strings, templated files, service configurations, and schedules.
-            <a href="https://raw.githubusercontent.com/EnginesBlueprints/Owncloud_new/master/blueprint.json">Here is an example.</a></p>
-          <p>You can publish your blueprint in a libray to give an app store-like installation experience, or you can provide a URL to the blueprint for side-loading of software.</p>
+          <p>
+            A blueprint.json specifies details such as source file locations, environment, replacement strings, templated files, service configurations, and schedules.
+            <span data-modal="example_blueprint_json_modal" class="modal_button example_blueprint_modal_button">Here is an example</span>.
+          </p>
+          <p>Blueprints can be published in a library to give an app store-like installation experience, or provided via a URL for side-loading of software.</p>
+        </div>
+        <div class="col-12">
+          &nbsp;
         </div>
       </div>
     </div>
   </div>
 
   <div class="section contrasting_font_color" data-anchor="studio">
-    <div id="logo_mechanical">
-      <img src="/assets/images/logo_mechanical_drawing.png">
-    </div>
     <div class="container">
       <div class="row">
-        <div class="col-12">
+        <div class="col-6">
           <h4>Studio</h4>
           <p>The easiest way to produce a blueprint is to use the Engines Developer Studio.</p>
           <p>It provides a form-based GUI for defining the contents of blueprints.json files.</p>
         </div>
-        <div class="col-3 col-6-sm">
-          <a href="/assets/images/screenshots/engines_developer_studio_1.png"><img class="screenshot" src="/assets/images/screenshots/engines_developer_studio_1.png"></img></a>
+        <div class="col-6">
+          <div class="studio_screenshots_carousel">
+            <div class="studio_screenshots_carousel_slide text-center">
+              <div data-modal="studio_screenshot1_modal" class="modal_button screenshot_modal_button"><img class="screenshot" src="/assets/images/screenshots/engines_developer_studio_1.png"></img></div>
+            </div>
+            <div class="studio_screenshots_carousel_slide text-center">
+              <div data-modal="studio_screenshot2_modal" class="modal_button screenshot_modal_button"><img class="screenshot" src="/assets/images/screenshots/engines_developer_studio_2.png"></img></div>
+            </div>
+            <div class="studio_screenshots_carousel_slide text-center">
+              <div data-modal="studio_screenshot3_modal" class="modal_button screenshot_modal_button"><img class="screenshot" src="/assets/images/screenshots/engines_developer_studio_3.png"></img></div>
+            </div>
+            <div class="studio_screenshots_carousel_slide text-center">
+              <div data-modal="studio_screenshot4_modal" class="modal_button screenshot_modal_button"><img class="screenshot" src="/assets/images/screenshots/engines_developer_studio_4.png"></img></div>
+            </div>
+          </div>
+          <div class="carousel_arrows studio_screenshots_carousel_arrows text-center">
+            <div class="fa fa-arrow-left carousel_arrow studio_screenshots_carousel_arrow_left"></div>
+            <div class="fa fa-arrow-right carousel_arrow studio_screenshots_carousel_arrow_right"></div>
+          </div>
         </div>
-        <div class="col-3 col-6-sm">
-          <a href="/assets/images/screenshots/engines_developer_studio_2.png"><img class="screenshot" src="/assets/images/screenshots/engines_developer_studio_2.png"></img></a>
-        </div>
-        <div class="col-3 col-6-sm">
-          <a href="/assets/images/screenshots/engines_developer_studio_3.png"><img class="screenshot" src="/assets/images/screenshots/engines_developer_studio_3.png"></img></a>
-        </div>
-        <div class="col-3 col-6-sm">
-          <a href="/assets/images/screenshots/engines_developer_studio_4.png"><img class="screenshot" src="/assets/images/screenshots/engines_developer_studio_4.png"></img></a>
-        </div>
+
       </div>
     </div>
   </div>
 
   <div class="section" data-anchor="contact">
-    <div id="wobbly_blob">
+    <div id="wobbly_blob" style="display: none;">
       <svg viewBox="0 0 847 1318">
         <path>
           <animate attributeName="d" dur="30000ms" repeatCount="indefinite"
@@ -409,15 +482,84 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <p>Engines is being developed by<br>
+          <p>Engines co-founders<br>
             James Vodanovich
           <a href="mailto:james@engines.org">james@engines.org</a>
-          and<br>
+          <br>
             Lachlan Douglas
-          <a href="mailto:lachlan@engines.org">lachlan@engines.org</a>.</p>
+          <a href="mailto:lachlan@engines.org">lachlan@engines.org</a></p>
         </div>
       </div>
     </div>
   </div>
 
 </div>
+
+
+<!-- Menu -->
+<div id="nav_menu_button_open" class="nav_menu_button"><i class="fa fa-bars"></i></div>
+<div id="nav_menu" style="display: none;">
+  <div id="nav_menu_content">
+    <div id="nav_menu_button_close" class="nav_menu_button"><i class="fa fa-bars"></i></div>
+    <a class="nav_menu_link" href="#home">Home</a>
+    <a class="nav_menu_link" href="#overview">Overview</a>
+    <a class="nav_menu_link" href="#management">Management</a>
+    <a class="nav_menu_link" href="#pricing">Pricing</a>
+    <a class="nav_menu_link" href="#apps">Apps</a>
+    <a class="nav_menu_link" href="#user_stories">Users</a>
+    <a class="nav_menu_link" href="#install">Install</a>
+    <a class="nav_menu_link" href="#technical">Technical</a>
+    <a class="nav_menu_link" href="#developers">Developers</a>
+    <a class="nav_menu_link" href="#integrators">Integrators</a>
+    <a class="nav_menu_link" href="#blueprints">Blueprints</a>
+    <a class="nav_menu_link" href="#studio">Studio</a>
+    <a class="nav_menu_link" href="#contact">Contact</a>
+  </div>
+</div>
+
+<!-- Modals -->
+<div id="studio_screenshot1_modal" class="modal">
+  <div class="modal-content">
+    <div class="close"><i class="fa fa-times"></i></div>
+    <div class="modal-content-body">
+      <img src="/assets/images/screenshots/engines_developer_studio_1.png"></img>
+    </div>
+  </div>
+</div>
+<div id="studio_screenshot2_modal" class="modal">
+  <div class="modal-content">
+    <div class="close"><i class="fa fa-times"></i></div>
+    <div class="modal-content-body">
+      <img src="/assets/images/screenshots/engines_developer_studio_2.png"></img>
+    </div>
+  </div>
+</div>
+<div id="studio_screenshot3_modal" class="modal">
+  <div class="modal-content">
+    <div class="close"><i class="fa fa-times"></i></div>
+    <div class="modal-content-body">
+      <img src="/assets/images/screenshots/engines_developer_studio_3.png"></img>
+    </div>
+  </div>
+</div>
+<div id="studio_screenshot4_modal" class="modal">
+  <div class="modal-content">
+    <div class="close"><i class="fa fa-times"></i></div>
+    <div class="modal-content-body">
+      <img src="/assets/images/screenshots/engines_developer_studio_4.png"></img>
+    </div>
+  </div>
+</div>
+
+<div id="example_blueprint_json_modal" class="modal">
+  <div class="modal-content">
+    <div class="close"><i class="fa fa-times"></i></div>
+    <div class="modal-content-body">
+      <pre class="wrap_line"><%= @example_blueprint_json %></pre>
+    </div>
+  </div>
+</div>
+
+<% @apps.each do |app| %>
+  <%= erb :_app_modal, locals: { app: app } %>
+<% end %>
