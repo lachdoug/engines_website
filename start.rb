@@ -4,31 +4,50 @@ require 'json'
 require 'redcarpet'
 
 get '/' do
+  erb :index, layout: :layout
+end
+
+get '/index_content' do
   begin
-    IndexHtml ||= index_html
+    IndexContentHtml ||= index_content_html
   rescue => e
     'Could not load apps from: ' + engines_library_uri.to_s + ' ' + e.to_s
   end
 end
 
-def index_html
-  @apps = featured_apps
-  erb :index, layout: :layout
-end
-
-get '/apps' do
-  p "Loaded library_apps #{library_apps}"
-  AppsHtml ||= apps_html
-end
-
-def apps_html
+def index_content_html
   @apps = library_apps
-  erb :apps, layout: :layout
+  @example_blueprint_json = example_blueprint_json
+  erb :index_content, layout: false
 end
 
-get '/get_engines' do
-  erb :get_engines, layout: :layout
-end
+
+
+
+# get "/new_game" do
+#   content_type 'text/javascript'
+#   # Turns views/new_game.erb into a string
+#   erb :new_game, :layout => false
+# end
+
+# get '/apps' do
+#   p "Loaded library_apps #{library_apps}"
+#   # AppsHtml ||=
+#   apps_html
+# end
+
+# def apps_html
+#   @apps = library_apps
+#   erb :apps, layout: :layout
+# end
+#
+# get '/get_engines' do
+#   erb :get_engines, layout: :layout
+# end
+#
+# get '/devs' do
+#   erb :devs, layout: :layout
+# end
 
 get '/install' do
   File.read 'install_script.sh'
@@ -38,9 +57,17 @@ get '/uninstall' do
   File.read 'uninstall_script.sh'
 end
 
+# get '/user_stories' do
+#   erb :user_stories, layout: :layout
+# end
+#
+# get '/technical_brief' do
+#   erb :technical_brief, layout: :layout
+# end
+
 def apps_json
+  url = "#{engines_library_uri}/api/v0/apps.json"
   begin
-    url = "#{engines_library_uri}/api/v0/apps.json"
     RestClient.get url
   rescue
     # Try again with invalid ssl
@@ -49,9 +76,30 @@ def apps_json
   end
 end
 
-def engines_library_uri
-  ENV['ENGINES_LIBRARY_API_URI'] || "http://localhost:3010" || "https://appslib.current.engines.org/"
+def example_blueprint_json
+  url = example_blueprint_uri
+  begin
+    RestClient.get url
+  rescue
+    # Try again with invalid ssl
+    p "Warning: The example blueprint certificate is invalid!"
+    RestClient::Request.execute( method: :get, url: url, headers: {}, verify_ssl: false )
+  rescue
+    nil
+  end
 end
+
+def engines_library_uri
+  ENV['ENGINES_LIBRARY_API_URI']  || "http://library.engines.org/" #|| "http://localhost:3010"
+end
+
+def example_blueprint_uri
+  ENV['ENGINES_EXAMPLE_BLUEPRINT_URI']  || "https://raw.githubusercontent.com/EnginesBlueprints/Owncloud_new/master/blueprint.json"
+end
+
+
+
+
 
 def library_apps
   @@library_apps ||= apps_from_schema(JSON.parse(apps_json))
@@ -70,9 +118,9 @@ def schema_0_1_apps(library_apps_hash)
   library_apps_hash['apps'] || []
 end
 
-def featured_apps
-  library_apps.select{|app| app['featured']}
-end
+# def featured_apps
+#   library_apps.select{|app| app['featured']}
+# end
 
 helpers do
   def markdown(text)
