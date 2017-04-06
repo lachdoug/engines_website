@@ -1,3 +1,11 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="assets/stylesheets/vendor/jquery.fullPage.css">
+  <link rel="stylesheet" type="text/css" href="assets/stylesheets/vendor/slick.css">
+  <link rel="stylesheet" type="text/css" href="assets/stylesheets/vendor/slick-theme.css">
+  <link rel="stylesheet" href="assets/stylesheets/vendor/grid.css">
+  <link rel="stylesheet" href="assets/stylesheets/application.css">
+</head>
+
 <div id="fullpage" style="display: none;">
 
   <div class="section" data-anchor="home">
@@ -518,48 +526,50 @@
 </div>
 
 <!-- Modals -->
-<div id="studio_screenshot1_modal" class="modal">
-  <div class="modal-content">
-    <div class="close"><i class="fa fa-times"></i></div>
-    <div class="modal-content-body">
-      <img src="/assets/images/screenshots/engines_developer_studio_1.png"></img>
+<div id="modals" style="display: none;">
+  <div id="studio_screenshot1_modal" class="modal">
+    <div class="modal-content">
+      <div class="close"><i class="fa fa-times"></i></div>
+      <div class="modal-content-body">
+        <img src="/assets/images/screenshots/engines_developer_studio_1.png"></img>
+      </div>
     </div>
   </div>
-</div>
-<div id="studio_screenshot2_modal" class="modal">
-  <div class="modal-content">
-    <div class="close"><i class="fa fa-times"></i></div>
-    <div class="modal-content-body">
-      <img src="/assets/images/screenshots/engines_developer_studio_2.png"></img>
+  <div id="studio_screenshot2_modal" class="modal">
+    <div class="modal-content">
+      <div class="close"><i class="fa fa-times"></i></div>
+      <div class="modal-content-body">
+        <img src="/assets/images/screenshots/engines_developer_studio_2.png"></img>
+      </div>
     </div>
   </div>
-</div>
-<div id="studio_screenshot3_modal" class="modal">
-  <div class="modal-content">
-    <div class="close"><i class="fa fa-times"></i></div>
-    <div class="modal-content-body">
-      <img src="/assets/images/screenshots/engines_developer_studio_3.png"></img>
+  <div id="studio_screenshot3_modal" class="modal">
+    <div class="modal-content">
+      <div class="close"><i class="fa fa-times"></i></div>
+      <div class="modal-content-body">
+        <img src="/assets/images/screenshots/engines_developer_studio_3.png"></img>
+      </div>
     </div>
   </div>
-</div>
-<div id="studio_screenshot4_modal" class="modal">
-  <div class="modal-content">
-    <div class="close"><i class="fa fa-times"></i></div>
-    <div class="modal-content-body">
-      <img src="/assets/images/screenshots/engines_developer_studio_4.png"></img>
+  <div id="studio_screenshot4_modal" class="modal">
+    <div class="modal-content">
+      <div class="close"><i class="fa fa-times"></i></div>
+      <div class="modal-content-body">
+        <img src="/assets/images/screenshots/engines_developer_studio_4.png"></img>
+      </div>
     </div>
   </div>
-</div>
 
-<div id="example_blueprint_json_modal" class="modal">
-  <div class="modal-content">
-    <div class="close"><i class="fa fa-times"></i></div>
-    <div class="modal-content-body">
-      <pre class="wrap_line"><%= @example_blueprint_json %></pre>
+  <div id="example_blueprint_json_modal" class="modal">
+    <div class="modal-content">
+      <div class="close"><i class="fa fa-times"></i></div>
+      <div class="modal-content-body">
+        <pre class="wrap_line"><%= @example_blueprint_json %></pre>
+      </div>
     </div>
   </div>
-</div>
 
-<% @apps.each do |app| %>
-  <%= erb :_app_modal, locals: { app: app } %>
-<% end %>
+  <% @apps.each do |app| %>
+    <%= erb :_app_modal, locals: { app: app } %>
+  <% end %>
+</div>
