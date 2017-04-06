@@ -1,17 +1,12 @@
 $(document).ready(function() {
 	set_up_index_content();
+	$('#page_loading_spinner').remove();
+	$('#fullpage').show();
+	$('#modals').show(); // modals and fullpage are set to display:none for loading, otherwise ugly stuff flashes-up on screen just before fullpage kicks in
 });
 
 var set_up_index_content = function() {
 	$('#phone1').css('opacity', '0');
-	$('#page_loading_spinner').remove();
-	$('#fullpage').show();
-	$('#modals').show(); // modals and fullpage are set to display:none for loading, otherwise ugly stuff flashes-up on screen just before fullpage kicks in
-
-	// $('.nav_menu_link').on('touchstart mousedown', function(event) {
-	// 	event.preventDefault();
-	// 	$('#nav_menu').fadeIn();
-	// });
 
 	$('#nav_menu_button_open').on('touchstart mousedown', function(event) {
 		event.preventDefault();
