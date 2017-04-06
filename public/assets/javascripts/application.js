@@ -1,8 +1,19 @@
 $(document).ready(function() {
-	set_up_index_content();
-	$('#page_loading_spinner').remove();
-	$('#fullpage').show();
-	$('#modals').show(); // modals and fullpage are set to display:none for loading, otherwise ugly stuff flashes-up on screen just before fullpage kicks in
+
+	$.get('/index_content', function( data ) {
+	  $('body').append( data );
+		$('#fullpage').show();
+		set_up_index_content();
+		$('#page_loading_spinner').remove();
+		$('#modals').show(); // modals and fullpage are set to display:none for loading, otherwise ugly stuff flashes-up on screen just before fullpage kicks in
+
+		// Redraw carousels after fullPage renderer
+		$('.user_stories_carousel').slick('setPosition');
+		$('.mgmt_screenshots_carousel').slick('setPosition');
+		$('.apps_carousel').slick('setPosition');
+
+	});
+
 });
 
 var set_up_index_content = function() {
@@ -284,10 +295,5 @@ autoplaySpeed: 0, cssEase: 'linear',
 		// afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
 		// onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
 	});
-
-  // Redraw carousels after fullPage renderer
-	$('.user_stories_carousel').slick('setPosition');
-	$('.mgmt_screenshots_carousel').slick('setPosition');
-	$('.apps_carousel').slick('setPosition');
 
 };
