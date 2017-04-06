@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+	$('#page_loading_spinner').show();
+
 	$.get('/index_content', function( data ) {
 	  $('body').append( data );
 		$('#fullpage').show();
@@ -11,6 +13,7 @@ $(document).ready(function() {
 		$('.user_stories_carousel').slick('setPosition');
 		$('.mgmt_screenshots_carousel').slick('setPosition');
 		$('.apps_carousel').slick('setPosition');
+		$('.studio_screenshots_carousel').slick('setPosition');
 
 	});
 
