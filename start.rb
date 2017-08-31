@@ -4,49 +4,14 @@ require 'json'
 require 'redcarpet'
 
 get '/' do
-  erb :index, layout: :layout
-end
-
-get '/index_content' do
-  begin
+  # begin
     IndexContentHtml ||= index_content_html
-  rescue => e
-    'Could not load apps from: ' + engines_library_uri.to_s + ' ' + e.to_s
-  end
+  # rescue => e
+    # 'Could not build page. Ensure that  apps from: ' + engines_library_uri.to_s + ' ' + e.to_s
+  # end
 end
 
-def index_content_html
-  @apps = library_apps
-  @example_blueprint_json = example_blueprint_json
-  erb :index_content, layout: false
-end
-
-
-
-
-# get "/new_game" do
-#   content_type 'text/javascript'
-#   # Turns views/new_game.erb into a string
-#   erb :new_game, :layout => false
-# end
-
-# get '/apps' do
-#   p "Loaded library_apps #{library_apps}"
-#   # AppsHtml ||=
-#   apps_html
-# end
-
-# def apps_html
-#   @apps = library_apps
-#   erb :apps, layout: :layout
-# end
-#
-# get '/get_engines' do
-#   erb :get_engines, layout: :layout
-# end
-#
-# get '/devs' do
-#   erb :devs, layout: :layout
+# get '/index_content' do
 # end
 
 get '/install' do
@@ -57,20 +22,20 @@ get '/uninstall' do
   File.read 'uninstall_script.sh'
 end
 
-# get '/user_stories' do
-#   erb :user_stories, layout: :layout
-# end
-#
-# get '/technical_brief' do
-#   erb :technical_brief, layout: :layout
-# end
+private
+
+def index_content_html
+  @apps = apps_from_schema(JSON.parse(apps_json))
+  @example_blueprint_json = example_blueprint_json
+  erb :index, layout: :layout
+end
 
 def apps_json
   url = "#{engines_library_uri}/api/v0/apps.json"
   begin
     RestClient.get url
   rescue
-    # Try again with invalid ssl
+    # Try again - without checking for invalid ssl
     p "Warning: The library certificate is invalid!"
     RestClient::Request.execute( method: :get, url: url, headers: {}, verify_ssl: false )
   end
@@ -97,13 +62,9 @@ def example_blueprint_uri
   ENV['ENGINES_EXAMPLE_BLUEPRINT_URI']  || "https://raw.githubusercontent.com/EnginesBlueprints/Owncloud_new/master/blueprint.json"
 end
 
-
-
-
-
-def library_apps
-  @@library_apps ||= apps_from_schema(JSON.parse(apps_json))
-end
+# def library_apps
+#   @@library_apps ||= apps_from_schema(JSON.parse(apps_json))
+# end
 
 def apps_from_schema(library_apps_hash)
   return schema_0_1_apps(library_apps_hash) if library_apps_hash['schema'] == '0.1'
@@ -117,10 +78,6 @@ end
 def schema_0_1_apps(library_apps_hash)
   library_apps_hash['apps'] || []
 end
-
-# def featured_apps
-#   library_apps.select{|app| app['featured']}
-# end
 
 helpers do
   def markdown(text)

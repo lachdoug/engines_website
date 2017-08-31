@@ -1,13 +1,11 @@
 $(document).ready(function() {
 
-	$('#page_loading_spinner').show();
 
-	$.get('/index_content', function( data ) {
-	  $('body').append( data );
-		$('#fullpage').show();
+	// $.get('/index_content', function( data ) {
+	//   $('body').append( data );
+		// $('#fullpage').show();
 		set_up_index_content();
-		$('#page_loading_spinner').remove();
-		$('#modals').show(); // modals and fullpage are set to display:none for loading, otherwise ugly stuff flashes-up on screen just before fullpage kicks in
+		// $('#modals').show(); // modals and fullpage are set to display:none for loading, otherwise ugly stuff flashes-up on screen just before fullpage kicks in
 
 		// Redraw carousels after fullPage renderer
 		$('.user_stories_carousel').slick('setPosition');
@@ -15,7 +13,12 @@ $(document).ready(function() {
 		$('.apps_carousel').slick('setPosition');
 		$('.studio_screenshots_carousel').slick('setPosition');
 
-	});
+		$('#page_loading_spinner').remove();
+
+		$('#page_content').show();
+
+
+	// });
 
 });
 

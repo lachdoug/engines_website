@@ -1,5 +1,5 @@
 #!/bin/bash
-function install {
+function installEngines {
   sudo apt-get -y update </dev/null
   sudo apt-get install -y git </dev/null
   cd /tmp;
@@ -7,4 +7,4 @@ function install {
   cd EnginesInstaller;
   sudo bash ./install_engines.sh;
 }
-install
+installEngines
