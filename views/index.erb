@@ -1,34 +1,196 @@
-<body>
-  <div id="page_loading_spinner">
-    <svg width="100" height="100">
-      <g transform="scale(0.33333)">
-        <path d="
-          M 150,300
-          L 280,225
-          L 280,75
-          L 150,0
-          L 20,75
-          L 20,225
-          L 150,300
-          M 40,150
-          A 110,110 0 1,0 260,150
-          A 110,110 0 1,0 40,150
-          Z"
-          style="fill:#48D;stroke-width:0" fill-rule="evenodd">
-          <animateTransform attributeName="transform"
-                                    attributeType="XML"
-                                    type="rotate"
-                                    from="0 150 150"
-                                    to="360 150 150"
-                                    dur="2s"
-                                    repeatCount="indefinite"/>
-        </path>
-      </g>
+<% if false %>
+<p>  Discounts for startups</p>
+<p>  Manage multiple client systems</p>
+<p>  Host a proprietary application library</p>
+
+<p><a href="#install" class="button"><i class="fa fa-download"></i> Get Engines</a></p>
+<p>
+  <video controls="" width="100%" src="/assets/videos/engines_promo_video.m4v" type="video/mp4"></video>
+</p>
+
+
+
+    <div id="wobbly_blob" style="display: none;">
+      <svg viewBox="0 0 847 1318">
+        <path>
+          <animate attributeName="d" dur="30000ms" repeatCount="indefinite"
+          values="M837.5 459.3c-43.9 235.5-225.7 270.5-186 441.9 72.7 313.8-150.4 445.6-312.9 410.9-162.5-34.8-304.5-261.5-222.2-455.5s-40.1-256.3-78-352.3S-52 246 119.4 89.5s461.2-68 546.6-29.2c85.4 38.7 215.4 163.5 171.5 399z;
+          M774.3 342.8c-43.9 235.5-262.7 382.6-223 554 72.7 313.8-152.5 435.7-315 401-162.5-34.8-293.3-226-211-420s81.9-259 44-355-146.4-245.5 25-402 439.6-129.8 525-91c85.4 38.7 198.9 77.5 155 313z;
+          M837.5 459.3c-43.9 235.5-225.7 270.5-186 441.9 72.7 313.8-150.4 445.6-312.9 410.9-162.5-34.8-304.5-261.5-222.2-455.5s-40.1-256.3-78-352.3S-52 246 119.4 89.5s461.2-68 546.6-29.2c85.4 38.7 215.4 163.5 171.5 399z;">
+        </animate>
+      </path>
     </svg>
   </div>
 
-  <div id="page_content" style="display: none;">
-    <%= erb :index_content, layout: false %>
+
+
+<% end %>
+<div id="page">
+
+  <div class="section" id="home">
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <h4>Self-host</h4>
+          <p>
+            Engines is
+            for hosting software.</p>
+        </div>
+        <div class="col-6">
+          <div id="main_image_wrapper">
+            <img src="/assets/images/iphone1.png" class="main_image">
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-</body>
+  <div class="section contrasting_colors" id="overview">
+    <div class="container">
+      <div class="row summary-icons">
+        <div class="col-4 text-center">
+          <div class="summary-icon">
+            <i class="fa fa-linux"></i><br>
+            <small>Run<br>on Linux</small>
+          </div>
+        </div>
+        <div class="col-4 text-center">
+          <div class="summary-icon">
+            <i class="fa fa-cube"></i><br>
+            <small>Deploy<br>containers</small>
+          </div>
+        </div>
+        <div class="col-4 text-center">
+          <div class="summary-icon">
+            <i class="fa fa-window-restore"></i><br>
+            <small>GUI<br>interface</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="management">
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <p>Engines automates the build and deployment
+            of software on infrastructure that you control.</p>
+          <p>It allows you to run multiple sandboxed
+            applications in
+            standard environments.</p>
+          <p>You can operate a single system
+            or multiple federated systems.</p>
+        </div>
+        <div class="col-6">
+          <div class="mgmt_screenshots_carousel">
+            <div class="mgmt_screenshots_carousel_slide">
+              <img src='assets/images/screenshots/engines_mgmt_1.png'></img>
+            </div>
+            <div class="mgmt_screenshots_carousel_slide">
+              <img src='assets/images/screenshots/engines_mgmt_2.png'></img>
+            </div>
+            <div class="mgmt_screenshots_carousel_slide">
+              <img src='assets/images/screenshots/engines_mgmt_3.png'></img>
+            </div>
+            <div class="mgmt_screenshots_carousel_slide">
+              <img src='assets/images/screenshots/engines_mgmt_4.png'></img>
+            </div>
+          </div>
+          <div class="carousel_arrows mgmt_screenshots_carousel_arrows">
+            <div class="fa fa-arrow-left carousel_arrow mgmt_screenshots_carousel_arrow_left"></div>
+            <div class="fa fa-arrow-right carousel_arrow mgmt_screenshots_carousel_arrow_right"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section contrasting_colors">
+    <div class="container text-center">
+          <p>Install on
+            <a href="http://www.ubuntu.com/download/server"
+                target= "engines_linux">Ubuntu Server 18.04 LTS</a>
+          </p>
+    </div>
+  </div>
+
+
+  <div class="section small_text" id="pricing">
+    <div class="row">
+      <div class="col-4">
+        <h3>Professional</h3>
+        <h4><small>from US</small>$399<br>per month</h4>
+        <p> <em>Commercial license</em></p>
+        <p>  For business and corporate users</p>
+        <p>  Technical support</p>
+        <a href="/professional" class="">
+          <i class="fa fa-caret-right"></i>
+          Professional Edition
+        </a>
+      </div>
+      <div class="col-4">
+        <h3>Partner</h3>
+        <h4>Discounted<br>pricing</h4>
+        <p> <em>Custom agreement</em></p>
+        <p>  For IT service providers, agencies, integrators, VARs, MSPs and OEMs</p>
+        <a href="/partner" class="">
+          <i class="fa fa-caret-right"></i>
+          Partner Program
+        </a>
+      </div>
+      <div class="col-4">
+        <h3>Community</h3>
+        <h4>Free<br>forever</h4>
+        <p> <em>Open source</em></p>
+        <p>    For personal users</p>
+        <p>    Community support</p>
+        <a href="/community" class="">
+          <i class="fa fa-caret-right"></i>
+          Community Edition
+        </a>
+      </div>
+      <div class="col-12">
+        &nbsp;
+      </div>
+    </div>
+  </div>
+
+  <div class="section contrasting_colors">
+    <div class="container text-center">
+          <p>
+            Read about the technical
+            aspects of Engines:<br>
+            <a href="/technical" class="">Technical Overview</a>.
+          </p>
+    </div>
+  </div>
+
+  <div class="section" id="apps">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <p>Engines can run all sorts of applications. Here's a selection from the Engines library.</p>
+          <div class="apps_carousel small_text">
+            <% @apps.each_slice(3) do |group_of_apps| %>
+              <div class="apps_carousel_slide">
+                <% group_of_apps.each do |app| %>
+                  <%= erb :_app, locals: { app: app } %>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+          <div class="carousel_arrows apps_carousel_arrows">
+            <div class="fa fa-arrow-left carousel_arrow apps_carousel_arrow_left"></div>
+            <div class="fa fa-arrow-right carousel_arrow apps_carousel_arrow_right"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<% @apps.each do |app| %>
+  <%= erb :_app_modal, locals: { app: app } %>
+<% end %>

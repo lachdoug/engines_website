@@ -4,15 +4,24 @@ require 'json'
 require 'redcarpet'
 
 get '/' do
-  # begin
-    IndexContentHtml ||= index_content_html
-  # rescue => e
-    # 'Could not build page. Ensure that  apps from: ' + engines_library_uri.to_s + ' ' + e.to_s
-  # end
+  IndexContentHtml ||= index_content_html
 end
 
-# get '/index_content' do
-# end
+get '/community' do
+  CommunityContentHtml ||= community_content_html
+end
+
+get '/professional' do
+  ProfessionalContentHtml ||= professional_content_html
+end
+
+get '/partner' do
+  PartnerContentHtml ||= partner_content_html
+end
+
+get '/technical' do
+  TechnicalContentHtml ||= technical_content_html
+end
 
 get '/install' do
   File.read 'install_script.sh'
@@ -26,8 +35,24 @@ private
 
 def index_content_html
   @apps = apps_from_schema(JSON.parse(apps_json))
-  @example_blueprint_json = example_blueprint_json
   erb :index, layout: :layout
+end
+
+def community_content_html
+  erb :community, layout: :layout
+end
+
+def professional_content_html
+  erb :professional, layout: :layout
+end
+
+def partner_content_html
+  erb :partner, layout: :layout
+end
+
+def technical_content_html
+  @example_blueprint_json = example_blueprint_json
+  erb :technical, layout: :layout
 end
 
 def apps_json

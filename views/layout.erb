@@ -4,26 +4,68 @@
   <meta charset="utf-8">
   <title>Engines</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="stylesheet" href="assets/stylesheets/loading.css">
+  <link rel="icon" href="favicon.png" type="image/png">
 
   <link rel="stylesheet" href="assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="assets/stylesheets/vendor/jquery.fullPage.css">
   <link rel="stylesheet" type="text/css" href="assets/stylesheets/vendor/slick.css">
   <link rel="stylesheet" type="text/css" href="assets/stylesheets/vendor/slick-theme.css">
   <link rel="stylesheet" href="assets/stylesheets/vendor/grid.css">
-
   <link rel="stylesheet" href="assets/stylesheets/application.css">
 
   <script type="text/javascript" src="assets/javascripts/vendor/jquery-3.2.0.min.js"></script>
-  <script type="text/javascript" src="assets/javascripts/vendor/scrolloverflow.min.js"></script>
-  <script type="text/javascript" src="assets/javascripts/vendor/jquery.fullPage.min.js"></script>
   <script type="text/javascript" src="assets/javascripts/vendor/slick.min.js"></script>
-
   <script type="text/javascript" src="assets/javascripts/application.js"></script>
 
 </head>
 
-<%= yield %>
+<body>
+
+  <a href="/"><img src="/assets/images/logo_transparent.png" class="engines_brand"></a>
+
+  <!-- Menu -->
+  <div id="nav">
+    <div id="nav_menu_button_open" class="nav_menu_button"><i class="fa fa-bars"></i></div>
+    <div id="nav_menu" style="display: none;">
+      <div id="nav_menu_content">
+        <div id="nav_menu_button_close" class="nav_menu_button"><i class="fa fa-bars"></i></div>
+        <a class="nav_menu_link" href="/">Home</a>
+        <a class="nav_menu_link" href="/professional">Professional Edition</a>
+        <a class="nav_menu_link" href="/partner">Partner Program</a>
+        <a class="nav_menu_link" href="/community">Community Edition</a>
+        <a class="nav_menu_link" href="/technical">Technical Overview</a>
+      </div>
+    </div>
+  </div>
+
+  <%= yield %>
+
+  <div class="section small_text" id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <a class="footer_link" href="/">Home</a>
+          <a class="footer_link" href="/professional">Professional Edition</a>
+          <a class="footer_link" href="/partner">Partner Program</a>
+          <a class="footer_link" href="/community">Community Edition</a>
+          <a class="footer_link" href="/technical">Technical Overview</a>
+
+        </div>
+        <div class="col-6">
+          Sales<br>
+          <span class="small_text">
+            <a href="mailto:sales@engines.org">sales@engines.org</a>
+          </span><br><br>
+
+          Support<br>
+          <span class="small_text">
+            <a href="mailto:support@engines.org">support@engines.org</a>
+          </span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>
 
 </html>

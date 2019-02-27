@@ -5,16 +5,20 @@ Landing site for engines.org
 
 The list of apps is cached on first page load, so restart the application to refresh list of apps.
 
-Framework
----------
+Deploy
+------
 
-Sinatra
+Sinatra app
+
+Launch with ruby start.rb
+
+No DB or volumes.
 
 Environment
 -----------
 
 ENV['ENGINES_LIBRARY_API_URI']
-The application will look here fore a list of applications.
+Find apps here.
 Default is "http://library.engines.org/"
 
 ENV['ENGINES_EXAMPLE_BLUEPRINT_URI']

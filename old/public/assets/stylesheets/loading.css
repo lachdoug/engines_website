@@ -1,0 +1,11 @@
+/*LOADING SPINNER*/
+#page_loading_spinner {
+  height: 100%;
+  width: 100%;
+  line-height: 75vh;
+  text-align: center;
+  font-size: 96px;
+  color: #48D;
+  background-color: #FFF;
+  z-index: 500;
+}
